@@ -1,2 +1,5 @@
 .idea
 server
+node_modules
+.vscode
+bun.lockb
