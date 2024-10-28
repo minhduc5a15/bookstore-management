@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.categories {
+    background-color: white;
+}
+
+.categories .navbar {
+    height: 7rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.categories .navbar button {
+    background: orange;
+    padding: 4px 0 4px 0px;
+    color: black;
+    height: 5rem;
+    border-radius: 5px;
+    width: 10rem;
+    text-align: center;
+    font-size: 1.3rem;
+}
