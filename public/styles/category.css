@@ -65,11 +65,23 @@ main .x{
 main .x .grid-book{
     padding: 12px 0;
     width: 100%;
+    /* justify-content: space-between; */
     display: grid;
+    grid-auto-rows: 200px;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 2rem;
 }
-
+main .x .grid-book .book-container{
+    grid-column: span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .x .grid-book .book-container .book{
+    background-color: red;
+    height: 200px;
+    width: 170px;
+}
 @media screen and (min-width: 640px) {
     main .x .grid-book{
         grid-template-columns: repeat(3, 1fr);
@@ -93,66 +105,3 @@ main .x .grid-book{
 /* @media screen and (min-width: 1536) {
     
 } */
-
-main .x .grid-book .book-container{
-    grid-column: span 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-main .x .grid-book .book-container .book{
-    width: 20rem;
-    margin: 2rem 0;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-main .x .grid-book .book-container .book .content{
-    padding: 1.5rem;
-}
-main .x .grid-book .book-container .book .content h1{
-    font-size: 2rem;
-}
-main .x .grid-book .book-container .book .content .price{
-    font-size: 2.2rem;
-    padding-top: 1rem;
-    display: flex;
-    justify-content: space-evenly;
-}
-main .x .grid-book .book-container .book .content .price span + span{
-    font-size: 1.5rem;
-    color: var(--light-color);
-    text-decoration: line-through;
-}
-
-main .x .grid-book .book-container .book .book-img{
-    padding: 1rem;
-    position: relative;
-}
-main .x .grid-book .book-container .book .book-img button{
-    position: absolute;
-    bottom: 0;
-    display: none;
-    cursor: pointer;
-    background-color: red;
-    padding: 1rem;
-    border-radius: 2px;
-    transition: transform 0.3s ease;
-    /* transform: translateY('-10px'); */
-}
-main .x .grid-book .book-container .book:hover button {
-    display: block;
-    transform: translateY('0');
-}
-main .x .grid-book .book-container .book .book-img img{
-    background-position: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 25rem;
-}
-main .x .grid-book .book-container .book:hover .book-img img{
-    transform: scale(1.05);
-}

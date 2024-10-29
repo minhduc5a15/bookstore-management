@@ -1,0 +1,51 @@
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('header.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(headerContent => {
+            const headerDiv = document.createElement('div');
+            headerDiv.innerHTML = headerContent;
+
+            document.body.insertAdjacentElement('afterbegin', headerDiv);
+            const searchForm = document.querySelector('.search-form');
+
+            document.querySelector('#search-btn').onclick = () => {
+                searchForm.classList.toggle('active');
+            };
+
+            window.onscroll = () => {
+                searchForm.classList.remove('active');
+
+                if (window.scrollY > 80) {
+                    document.querySelector('.header .header-2').classList.add('active');
+                } else {
+                    document.querySelector('.header .header-2').classList.remove('active');
+                }
+            };
+
+            let loginForm = document.querySelector('.login-form-container');
+
+            document.querySelector('#login-btn').onclick = () => {
+                loginForm.classList.toggle('active');
+            };
+
+            document.querySelector('#close-login-btn').onclick = () => {
+                loginForm.classList.remove('active');
+            };
+
+            window.onload = () => {
+                if (window.scrollY > 80) {
+                    document.querySelector('.header .header-2').classList.add('active');
+                } else {
+                    document.querySelector('.header .header-2').classList.remove('active');
+                }
+
+                fadeOut();
+            };
+        })
+        .catch(error => console.error('Lỗi khi tải header.html:', error));
+});
