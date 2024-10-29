@@ -5,3 +5,14 @@ node_modules
 bun.lockb
 .env
 .vercel
+api/
+.prettierrc
+package.json
+package-lock.json
+server.ts
+tsconfig.json
+types.ts
+vercel.json
+src/
+public/partials
+public/scripts

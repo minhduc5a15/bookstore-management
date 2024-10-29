@@ -65,23 +65,11 @@ main .x{
 main .x .grid-book{
     padding: 12px 0;
     width: 100%;
-    /* justify-content: space-between; */
     display: grid;
-    grid-auto-rows: 200px;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1rem;
 }
-main .x .grid-book .book-container{
-    grid-column: span 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-main .x .grid-book .book-container .book{
-    background-color: red;
-    height: 200px;
-    width: 170px;
-}
+
 @media screen and (min-width: 640px) {
     main .x .grid-book{
         grid-template-columns: repeat(3, 1fr);
@@ -105,3 +93,29 @@ main .x .grid-book .book-container .book{
 /* @media screen and (min-width: 1536) {
     
 } */
+
+
+main .x .grid-book .book-container{
+    grid-column: span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .x .grid-book .book-container .book{
+
+}
+main .x .grid-book .book-container .book .book-img{
+    
+}
+main .x .grid-book .book-container .book .book-img img{
+
+}
+main .x .grid-book .book-container .book .content{
+
+}
+main .x .grid-book .book-container .book .content h1{
+
+}
+main .x .grid-book .book-container .book .content .price{
+
+}
