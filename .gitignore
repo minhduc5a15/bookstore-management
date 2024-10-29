@@ -4,3 +4,4 @@ node_modules
 .vscode
 bun.lockb
 .env
+.vercel

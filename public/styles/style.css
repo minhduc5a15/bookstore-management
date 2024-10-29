@@ -42,7 +42,13 @@ html::-webkit-scrollbar-thumb {
     background: var(--black);
 }
 
+body {
+    width: 100%;
+    overflow: hidden;
+}
+
 section {
+    width: 100%;
     padding: 5rem 9%;
 }
 

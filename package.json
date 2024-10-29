@@ -3,9 +3,9 @@
     "author": "Pham Duc",
     "license": "ISC",
     "version": "1.0.0",
-    "main": "server.ts",
+    "main": "api/index.ts",
     "scripts": {
-        "start": "npx ts-node-dev --require dotenv/config server.ts"
+        "start": "bun x ts-node-dev --require dotenv/config api/index.ts"
     },
     "keywords": [],
     "description": "",
