@@ -1,8 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const headerDiv = document.createElement('div');
-    headerDiv.innerHTML = headerContent;
-
-    document.body.insertAdjacentElement('afterbegin', headerDiv);
     const searchForm = document.querySelector('.search-form');
 
     document.querySelector('#search-btn').onclick = () => {

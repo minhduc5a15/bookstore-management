@@ -31,7 +31,8 @@
                             <a href="#" class="btn">shop now</a>
                         </div>
                         <div class="book-image">
-                            <a href="<%= `${origin}/api/image/${book.thumbnailId}` %>"><img src="<%= `${origin}/api/image/${book.thumbnailId}` %>" alt="<%= book.title %>"></a>
+                            <a href="<%= `${origin}/api/image/${book.thumbnailId}` %>"><img
+                                    src="<%= `${origin}/api/image/${book.thumbnailId}` %>" alt="<%= book.title %>"></a>
                         </div>
                     </div>
                     <% }) %>
@@ -576,8 +577,9 @@
         </section>
 
 
-        <%- include('./partials/footer.ejs') %>
-            <script src="./scripts/script.js"></script>
+    <%- include('./partials/footer.ejs') %>
+    <script src="js/script.js"></script>
+    <script src="js/layout.js"></script>
 </body>
 
 </html>
