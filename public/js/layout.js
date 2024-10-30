@@ -31,7 +31,5 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             document.querySelector('.header .header-2').classList.remove('active');
         }
-
-        fadeOut();
     };
 });
