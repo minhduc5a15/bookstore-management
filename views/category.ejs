@@ -5,95 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/category.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/category.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <script src="scripts/layout.js"></script>
 </head>
 
-<body style="background-color: #ebeeff;">
-    <section>
-        <div class="categories">
-            <nav class="navbar">
-                <button>Fiction</button>
-                <button>Classics</button>
-                <button>Non-fiction</button>
-                <button>Science</button>
-                <button>Psychology and Self-help</button>
-                <button>Economics and Business</button>
-                <button>History</button>
-                <button>Philosophy and Religion</button>
-                <button>Art and Entertainment</button>
-                <button>Education and Life Skills</button>
-            </nav>
-        </div>
+<body>
+    <%- include('./partials/header.ejs') %>
 
-        <main>
-            <div class="header-content">
-                <h1>Features Book</h1>
-            </div>
-            <div class="x">
-                <div class="grid-book">
-                    <div class="book-container">
-                        <div class="book">
-                        </div>
-                    </div>
+        <section>
 
-                    <div class="book-container">
-                        <div class="book">
-                        </div>
-                    </div>
+            <main>
+                <div class="selectionBar">
+                    <select id="selectbar">
+                        <option value="fiction">Fiction</option>
+                        <option value="classical">Classical</option>
+                        <option value="non-fiction">Non-fiction</option>
+                        <option value="science">Science</option>
+                        <option value="self-help">Psychology and Self-help</option>
+                        <option value="economics">Economics and Business</option>
+                        <option value="history">History</option>
+                        <option value="religion">Philosophy and Religion</option>
+                        <option value="art">Art and Entertainment</option>
+                        <option value="life-skill">Education and Life Skills</option>
+                    </select>
+                </div>
+                <div class="header-content">
+                    <h1>Features Book</h1>
+                </div>
+                <div class="x">
+                    <div class="grid-book" id="bookGrid">
 
-                    <div class="book-container">
-                        <div class="book">
-                        </div>
-                    </div>
-
-                    <div class="book-container">
-                        <div class="book">
-                        </div>
-                    </div>
-
-                    <div class="book-container">
-                        <div class="book">
-                        </div>
-                    </div>
-
-                    <div class="book-container">
-                        <div class="book">
-                        </div>
-                    </div>
-
-                    <div class="book-container">
-                        <div class="book">
-                        </div>
-                    </div>
-
-                    <div class="book-container">
-                        <div class="book">
-                        </div>
-                    </div>
-
-                    <div class="book-container">
-                        <div class="book">
-                        </div>
-                    </div>
-
-                    <div class="book-container">
-                        <div class="book">
-                        </div>
-                    </div>
-
-                    <div class="book-container">
-                        <div class="book">
-                        </div>
                     </div>
                 </div>
-            </div>
-        </main>
-    </section>
+            </main>
 
+            <div class="categories">
+                <nav class="navbar" id="navbar">
+                    <button value="fiction">Fiction</button>
+                    <button value="classical">Classical</button>
+                    <button value="non-fiction">Non-fiction</button>
+                    <button value="science">Science</button>
+                    <button value="self-help">Psychology and Self-help</button>
+                    <button value="economics">Economics and Business</button>
+                    <button value="history">History</button>
+                    <button value="religion">Philosophy and Religion</button>
+                    <button value="art">Art and Entertainment</button>
+                    <button value="life-skill">Education and Life Skills</button>
+                </nav>
+            </div>
+        </section>
+
+        <script src="/js/category.js"></script>
 </body>
 
 </html>
