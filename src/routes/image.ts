@@ -19,7 +19,6 @@ router.get('/image/:filename', async (req, res) => {
 
         // Tìm file bằng filename trong GridFSBucket
         const file = files[0];
-        console.log(file);
         const readstream = gfs.openDownloadStreamByName(file.filename);
 
         readstream.pipe(res);

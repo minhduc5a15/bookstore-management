@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:wght@500&family=Montserrat:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --header-height: 3.5rem;
+    --first-color: #4960d4;
+    --title-color: #0c1645;
+    --text-color: #606785;
+    --border-color: #d9ddf2;
+    --white-color: #ffffff;
+    --body-color: #ebeeff;
+    --container-color: #f0f2ff;
+    --body-font: 'Montserrat', sans-serif;
+    --second-font: 'Montagu Slab', serif;
+    --biggest-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+@media screen and (min-width: 1150px) {
+    :root {
+        --biggest-font-size: 3.5rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: 0.875rem;
+        --smaller-font-size: 0.813rem;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body,
+input,
+button {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+    transition: background-color 0.4s;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--title-color);
+    font-family: var(--second-font);
+    font-weight: var(--font-medium);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+} */
+
+.swiper-slide {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    height: 300px;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    border-radius: 8px;
+}
+
+.slide-content {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.slide-content .title {
+    background-color: #d3d3d3;
+    height: 30px;
+    width: 70%;
+    border-radius: 4px;
+}
+
+.slide-content .author {
+    background-color: #d3d3d3;
+    height: 20px;
+    width: 50%;
+    border-radius: 4px;
+}
+
+.slide-content .description {
+    background-color: #d3d3d3;
+    height: 80px;
+    width: 100%;
+    border-radius: 4px;
+}
