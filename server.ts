@@ -1,5 +1,4 @@
 import express from 'express';
-import { connectDb } from './src/lib/db';
 import { apiRoutes, home, blogs } from './src/routes';
 const PORT = process.env.PORT || 3000;
 
@@ -29,7 +28,6 @@ app.get('/books/:id', (req, res) => {
 });
 
 // Start server
-connectDb();
 app.listen(PORT, async () => {
     // await connectDb();
     console.log(`[SERVER] ${new Date()} started on port ${PORT}`);

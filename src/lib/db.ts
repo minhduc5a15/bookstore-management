@@ -14,7 +14,6 @@ export const connectDb = async () => {
     try {
         await mongoose.connect(MONGODB_URI, {
             dbName: 'bookstore',
-            
         });
         isConnected = true;
         console.log('MongoDB Connected!');

@@ -1,13 +1,17 @@
-import { connectDb } from './db';
-import mongoose from 'mongoose';
+import client from './testdb';
+import { Db, GridFSBucket } from 'mongodb';
 
-export const getGfs = async () => {
-    await connectDb();
-    const db = mongoose.connection.db;
-    if (!db) {
+const getDb = async (): Promise<Db> => {
+    await client.connect();
+    return client.db('bookstore');
+};
+
+export const getGfs = async (): Promise<GridFSBucket | null> => {
+    try {
+        const db = await getDb();
+        return new GridFSBucket(db, { bucketName: 'images' });
+    } catch (error) {
+        console.error('Failed to create GridFSBucket:', error);
         return null;
     }
-    return new mongoose.mongo.GridFSBucket(db, {
-        bucketName: 'images',
-    });
 };
