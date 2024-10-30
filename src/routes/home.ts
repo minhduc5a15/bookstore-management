@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { connectDb } from '../lib/db';
-import mongoose from 'mongoose';
+import mongoose from '../lib/db';
 
 const router = Router();
 

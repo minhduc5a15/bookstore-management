@@ -24,3 +24,5 @@ export const connectDb = async () => {
         return null;
     }
 };
+
+export default mongoose;
