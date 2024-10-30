@@ -9,15 +9,14 @@ connectDb()
 // [GET] /
 router.get('/', async (req, res) => {
     try {
-        let db: mongoose.mongo.Db | null | undefined = mongoose.connection.db;
+        let db: mongoose.Connection | null = mongoose.connection;
         if (!db) {
-            connectDb();
-            db = mongoose.connection.db;
+            db = await connectDb();
         }
         if (!db) {
             return res.status(500).send('Error connecting to database');
         }
-        let books = await db
+        const books = await db
             .collection('books')
             .find(
                 {},

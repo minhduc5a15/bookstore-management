@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 
+mongoose.set("strictQuery", false);
+
 const MONGODB_URI = process.env.MONGODB_URI;
 
 let isConnected = false;
@@ -12,6 +14,7 @@ export const connectDb = async () => {
     try {
         await mongoose.connect(MONGODB_URI, {
             dbName: 'bookstore',
+            
         });
         isConnected = true;
         console.log('MongoDB Connected!');
