@@ -4,7 +4,7 @@ import mongoose from '../lib/db';
 
 const router = Router();
 
-connectDb()
+connectDb();
 
 // [GET] /
 router.get('/', async (req, res) => {
@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
         return res.render('index.ejs', { origin, books });
     } catch (error) {
         console.error(error);
-        return res.status(500).send('Error connecting to database');
+        return res.status(500).json(error);
     }
 });
 
