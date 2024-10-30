@@ -9,10 +9,6 @@ if (!MONGODB_URI) {
 }
 
 export const connectDb = async () => {
-    if (isConnected) {
-        console.log('Already connected to database');
-        return mongoose.connection;
-    }
     try {
         await mongoose.connect(MONGODB_URI, {
             dbName: 'bookstore',

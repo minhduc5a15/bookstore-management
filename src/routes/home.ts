@@ -8,7 +8,6 @@ router.get('/', async (req, res) => {
     try {
         let db = await connectDb();
         if (!db) {
-            db = await connectDb();
             return res.status(500).send('Error connecting to database');
         }
         let books = await db
