@@ -1,12 +1,18 @@
 import { Router } from 'express';
 import { connectDb } from '../lib/db';
+import mongoose from 'mongoose';
 
 const router = Router();
+
+connectDb()
 
 // [GET] /
 router.get('/', async (req, res) => {
     try {
-        let db = await connectDb();
+        let db: mongoose.Connection | null = mongoose.connection;
+        if (!db) {
+            db = await connectDb();
+        }
         if (!db) {
             return res.status(500).send('Error connecting to database');
         }
