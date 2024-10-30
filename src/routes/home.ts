@@ -10,13 +10,14 @@ router.get('/', async (req, res) => {
         if (!db) {
             return res.status(500).send('Error connecting to database');
         }
-        const books = await db
+        let books = await db
             .collection('books')
             .find(
                 {},
                 {
                     limit: 6,
                     sort: { publishedDate: -1 },
+                    retryWrites: true,
                 },
             )
             .toArray();
