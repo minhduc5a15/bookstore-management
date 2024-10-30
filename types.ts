@@ -7,10 +7,7 @@ export interface Book {
     description: string;
     categories: string[];
     pageCount?: number;
-    imageLinks: {
-        smallThumbnail: string;
-        thumbnail: string;
-    };
+    thumbnailId?: string;
     language: string;
     price: string; // dollar
     publishedDate: string;

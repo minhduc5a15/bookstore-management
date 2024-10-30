@@ -10,7 +10,16 @@ router.get('/', async (req, res) => {
         if (!db) {
             return res.status(500).send('Error connecting to database');
         }
-        const books = await db.collection('books').find().limit(6).toArray();
+        const books = await db
+            .collection('books')
+            .find(
+                {},
+                {
+                    limit: 6,
+                    sort: { publishedDate: -1 },
+                },
+            )
+            .toArray();
         const origin = req.protocol + '://' + req.get('host');
 
         return res.render('index.ejs', { origin, books });
