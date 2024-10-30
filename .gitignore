@@ -6,4 +6,5 @@ bun.lockb
 .env
 .vercel
 .env*.local
-./dist
+dist
+package-lock.json

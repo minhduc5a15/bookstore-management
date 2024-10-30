@@ -220,7 +220,7 @@ section {
 }
 
 .login-form-container div:first-child {
-    background: url(../image/login-wallpaper.png) no-repeat;
+    background: url(../images/login-wallpaper.png) no-repeat;
     position: absolute;
     background-size: cover;
     background-position: center;
