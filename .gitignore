@@ -13,6 +13,4 @@ tsconfig.json
 types.ts
 vercel.json
 src/
-public/partials
-public/scripts
 api/index.ts

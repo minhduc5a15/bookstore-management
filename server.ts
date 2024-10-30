@@ -11,4 +11,8 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/public');
 app.set('view engine', 'ejs');
 
+app.get('/book', (req, res) => {
+    res.render('book'); // Ghi 'book.ejs' trong thư mục public để hiển thị
+});
+
 export default app;
