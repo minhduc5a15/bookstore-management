@@ -67,7 +67,7 @@ function bookDetail() {
     document.querySelectorAll('#bookGrid > div > div').forEach((div) => {
         div.addEventListener('click', function () {
             console.log(this.id);
-            window.location.href = `/book?variable=${encodeURIComponent(this.id)}`;
+            window.location.href = `/book/${encodeURIComponent(this.id)}`;
         });
     });
 }

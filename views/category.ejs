@@ -3,17 +3,18 @@
 
 <head>
     <%- include('./partials/head.ejs') %>
-    <link rel="stylesheet" href="/css/category.css">
+        <link rel="stylesheet" href="/css/category.css">
 </head>
 
 <body style="background-color: #ebeeff;">
     <%- include('./partials/header.ejs') %>
 
-        <section>
+        <section class="category">
 
             <main>
                 <div class="selectionBar">
                     <select id="selectbar">
+                        <option value="all">All</option>
                         <option value="fiction">Fiction</option>
                         <option value="classical">Classical</option>
                         <option value="non-fiction">Non-fiction</option>
@@ -38,6 +39,7 @@
 
             <div class="categories">
                 <nav class="navbar" id="navbar">
+                    <button value="all">All</button>
                     <button value="fiction">Fiction</button>
                     <button value="classical">Classical</button>
                     <button value="non-fiction">Non-fiction</button>
