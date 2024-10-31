@@ -1,31 +1,27 @@
 import { Router } from 'express';
-import { getGfs } from '../lib/gfs';
+import cloudinary from '../lib/cloud';
+import axios from 'axios';
 
 const router = Router();
 
 router.get('/image/:filename', async (req, res) => {
+    const { filename } = req.params;
     try {
-        const gfs = await getGfs();
-        if (!gfs) {
-            return res.status(500).send('GridFS is not initialized');
-        }
+        const imageUrl = cloudinary.url(filename, {
+            fetch_format: 'auto',
+            quality: 'auto',
+            secure: true,
+        });
 
-        // Tìm file bằng filename trong GridFSBucket
-        const files = await gfs.find({ filename: req.params.filename }).toArray();
-
-        if (!files || files.length === 0) {
-            return res.status(404).send('File not found');
-        }
-
-        // Tìm file bằng filename trong GridFSBucket
-        const file = files[0];
-        const readstream = gfs.openDownloadStreamByName(file.filename);
-
-        readstream.pipe(res);
-
+        const response = await axios.get(imageUrl, {
+            responseType: 'arraybuffer',
+        });
+        const contentType = response.headers['content-type'];
+        res.set('Content-Type', contentType);
+        res.send(response.data);
     } catch (error) {
-        console.error(error);
-        res.status(500).send('Error downloading file');
+        console.error('Error retrieving image:', error);
+        res.status(500).json({ error: 'Failed to retrieve image' });
     }
 });
 

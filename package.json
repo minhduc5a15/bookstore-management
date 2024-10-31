@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "main": "api/index.ts",
     "scripts": {
-        "start": "npx ts-node-dev --require dotenv/config api/index.ts",
+        "start": "bun x ts-node-dev --require dotenv/config api/index.ts",
         "build": "npx tsc"
     },
     "keywords": [],
@@ -27,12 +27,12 @@
         "@types/gridfs-stream": "^0.5.39",
         "axios": "^1.7.7",
         "bcrypt": "^5.1.1",
+        "cloudinary": "^2.5.1",
         "cookie-parser": "^1.4.6",
         "dotenv": "^16.4.5",
         "ejs": "^3.1.10",
         "express": "^4.21.0",
         "express-rate-limit": "^7.4.0",
-        "firebase": "^11.0.1",
         "gridfs-stream": "^1.1.1",
         "helmet": "^7.1.0",
         "https": "^1.0.0",
