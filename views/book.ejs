@@ -14,8 +14,11 @@
             <main>
                 <div class="book-img"><img src="<%= `/api/image/${book.thumbnailId}` %>" alt="Educated"></div>
                 <div class="book-info">
-                    <h1><%= book.title %></h1>
-                    <h2><%= book.authors.join(', ') %></h2>
+                    <h1>
+                        <%= book.title %>
+                    </h1>
+                    <h2>
+                        <%= book.authors.join(', ') %></h2>
                     <h2><%= book.price %>$<span>200$</span></h2>
                     <div class="description"><%= book.description %></div>
                     <div class="btn-book"><button>Add to cart</button><button>Buy Now</button></div>
@@ -45,7 +48,8 @@
             </main>
         </footer>
         <link rel="stylesheet" href="/css/index.css">
-        <%- include('./partials/footer.ejs') %>
+        <script src="js/layout.js"></script>
+        <%- include(' ./partials/footer.ejs') %>
 </body>
 
 </html>
