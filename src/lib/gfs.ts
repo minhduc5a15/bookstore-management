@@ -1,4 +1,4 @@
-import client from './testdb';
+import client from './db';
 import { Db, GridFSBucket } from 'mongodb';
 
 const getDb = async (): Promise<Db> => {

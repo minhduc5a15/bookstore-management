@@ -1,14 +1,16 @@
 import { Router } from 'express';
-import client from '../lib/testdb';
+import { getDb } from '../lib/db';
 
 const router = Router();
 
 // [GET] /
 router.get('/', async (req, res) => {
     try {
-        await client.connect();
-        const books = await client
-            .db('bookstore')
+        const db = await getDb();
+        if (!db) {
+            return res.status(500).send('Error connecting to database');
+        }
+        const books = await db
             .collection('books')
             .find(
                 {},

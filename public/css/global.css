@@ -49,3 +49,29 @@ section {
     width: 100%;
     padding: 5rem 9%;
 }
+
+/* media queries */
+@media screen and (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    section {
+        padding: 3rem 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        scroll-padding-top: 0;
+    }
+
+    nody {
+        padding-bottom: 6rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}
