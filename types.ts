@@ -12,3 +12,13 @@ export interface Book {
     price: string; // dollar
     publishedDate: string;
 }
+
+export interface Blog {
+    id: string;
+    title: string;
+    preview: string;
+    blogImage: string;
+    author: string;
+    publishedDate: string;
+    blogContent: string;
+}

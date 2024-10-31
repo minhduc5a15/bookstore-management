@@ -229,16 +229,17 @@
 }
 
 /* media queries */
-@media (max-width: 991px) {
+@media screen and (max-width: 991px) {
     .header .header-1 {
         padding: 2rem;
     }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .header .header-2 {
         display: none;
     }
+    
     .bottom-navbar {
         display: block;
     }
@@ -253,7 +254,6 @@
     .header .header-1 .search-form {
         position: absolute;
         top: -115%;
-        left: 0;
         right: 2rem;
         width: 90%;
         box-shadow: var(--box-shadow);
