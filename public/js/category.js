@@ -1,5 +1,5 @@
 function displayBook(category) {
-    fetch('./data/books.json')
+    fetch('/api/books')
         .then((response) => response.json())
         .then((data) => {
             const bookGrid = document.getElementById('bookGrid');
@@ -21,7 +21,7 @@ function displayBook(category) {
                     const coverImgDiv = document.createElement('div');
                     coverImgDiv.classList.add('book-img');
                     const coverImg = document.createElement('img');
-                    coverImg.src = `http://localhost:8080/file/${book.thumbnailId}`;
+                    coverImg.src = `${window.location.origin}/api/image/${book.thumbnailId}`;
                     coverImg.alt = book.title;
                     // Button
                     // const buyButton = document.createElement('button');

@@ -10,7 +10,7 @@ router.get('/image/:filename', async (req, res) => {
         const imageUrl = cloudinary.url(filename, {
             fetch_format: 'auto',
             quality: 'auto',
-            secure: true,
+            secure: false,
         });
 
         const response = await axios.get(imageUrl, {
