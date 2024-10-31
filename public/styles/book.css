@@ -4,6 +4,7 @@ section{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    gap: 2rem;
 }
 
 section main{
@@ -25,6 +26,7 @@ section main .book-img{
 section main .book-img img{
     flex: 1;
     max-width: 300px;
+    max-height: 375px;
     aspect-ratio: 8 / 10;
     background-position: center;
     background-repeat: no-repeat;
@@ -47,6 +49,7 @@ section main .book-info h2 + h2{
 section main .book-info h2 span{
     font-size: 2rem;
     text-decoration: line-through;
+    margin-left: 1rem;
 }
 section main .book-info .description{
     font-size: 1.7rem;
@@ -71,7 +74,9 @@ section main .book-info .btn-book button{
     flex: 1;
     max-width: 200px;
     border-radius: 10px;
-    background-color: rgb(132, 95, 47);
+    background-color: #df7e00;
+    font-size: 1.7rem;
+    color: #ebeeff;
 }
 
 
@@ -88,8 +93,64 @@ section .detail{
 }
 section .detail h1{
     grid-column: span 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
+    border-radius: 10px;
+    border: 2px solid #df7e00;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+}
+
+footer{
+    width: 100%;
+    padding: 0 9%;
+    padding-bottom: 5rem;
+}
+
+footer > div {
+    width: 100%;
+    border-top: 2px solid black;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+}
+footer main{
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+}
+@media screen and (min-width: 640px) {
+    footer main{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (min-width: 768px) {
+    footer main{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media screen and (min-width: 1024px) {
+    footer main{
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+@media screen and (min-width: 1280px) {
+    footer main{
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+footer main > div {
+    grid-column: span 1;
+    grid-row: span 1;
+    display: flex;
+    align-items: center;
+}
+footer main > div div {
+    background-color: rebeccapurple;
+    width: 140px;
+    aspect-ratio: 8 / 10;
 }

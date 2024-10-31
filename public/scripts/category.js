@@ -6,7 +6,7 @@ function displayBook(category) {
             bookGrid.innerHTML = '';
 
             data.forEach((book) => {
-                if (book.categories.includes(category)) {
+                if (book.categories.includes(category) || category === 'all') {
                     // Create a div for each book
                     const bookDiv = document.createElement('div');
                     bookDiv.classList.add('book-container');
@@ -86,5 +86,6 @@ function getValue() {
         });
     }
 }
+displayBook('all');
 getValue();
 window.addEventListener('resize', getValue);

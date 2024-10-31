@@ -14,5 +14,8 @@ app.set('view engine', 'ejs');
 app.get('/book', (req, res) => {
     res.render('book'); // Ghi 'book.ejs' trong thư mục public để hiển thị
 });
+app.get('/cart', (req, res) => {
+    res.render('cart');
+});
 
 export default app;

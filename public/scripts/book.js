@@ -40,7 +40,7 @@ function loadBooksAndFind(bookId) {
             const bookAuthor = document.createElement('h2');
             bookAuthor.textContent = `${book.authors.join(', ')}`;
             const bookPrice = document.createElement('h2');
-            bookPrice.textContent = book.price;
+            bookPrice.textContent = `${book.price}$`;
             const bookPriceSpan = document.createElement('span');
             bookPriceSpan.textContent = '200$';
             bookPrice.appendChild(bookPriceSpan);
