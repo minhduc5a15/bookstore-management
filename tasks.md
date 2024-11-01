@@ -1,5 +1,5 @@
 <!-- # Sửa bottom navbar ở header  -->
-# About us
+# About us (beta)
 # Blogs: Sửa responsive
 # Add to cart
 # Thêm sách

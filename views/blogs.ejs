@@ -3,129 +3,59 @@
 
 <head>
     <%- include('./partials/head.ejs') %>
-        <link rel="stylesheet" href="/css/blogs.css">
+    <link rel="stylesheet" href="css/blogs.css">
 </head>
 
-<body style="background-color: #ebeeff;">
+<body>
     <%- include('./partials/header.ejs') %>
-        <section class="blogs" id="blogs">
-            <h1 class="heading"><span>our blogs</span></h1>
-            <div class="blog-container">
-                <ul class="blog-list">
-                    <li class="blog-item">
-                        <div class="blog-img"></div>
-                        <div class="blog-preview">
-                            <div class="blog-title">
-                                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Erat conubia erat nascetur
-                                    ligula
-                                    faucibus mus. Senectus netus
-                                    lobortis magnis dapibus hendrerit facilisis habitant scelerisque.</p>
-                            </div>
-                            <div class="blog-author">
-                                Pham Duc
-                            </div>
-                            <div class="blog-content">
-                                Lorem ipsum odor amet, consectetuer adipiscing elit. Est duis montes vestibulum justo
-                                consequat quam vehicula tellus
-                                maecenas. Curabitur scelerisque tellus volutpat sit varius cubilia. Laoreet ad neque nec
-                                egestas lacinia consequat
-                                egestas nibh. Per magnis sodales interdum; ultricies conubia aptent erat? Mauris lectus
-                                et
-                                pellentesque lobortis class
-                                ipsum eleifend ultrices. Sed at maximus morbi cras parturient quis class. Vestibulum
-                                aliquet
-                                quam maecenas dictum, diam
-                                mauris amet. Felis sociosqu
-                            </div>
-                        </div>
-                    </li>
-                    <li class="blog-item">
-                        <div class="blog-img"></div>
-                        <div class="blog-preview">
-                            <div class="blog-title">
-                                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Erat conubia erat nascetur
-                                    ligula
-                                    faucibus mus. Senectus netus
-                                    lobortis magnis dapibus hendrerit facilisis habitant scelerisque.</p>
-                            </div>
-                            <div class="blog-author">
-                                Pham Duc
-                            </div>
-                            <div class="blog-content">
-                                Lorem ipsum odor amet, consectetuer adipiscing elit. Est duis montes vestibulum justo
-                                consequat quam vehicula tellus
-                                maecenas. Curabitur scelerisque tellus volutpat sit varius cubilia. Laoreet ad neque nec
-                                egestas lacinia consequat
-                                egestas nibh. Per magnis sodales interdum; ultricies conubia aptent erat? Mauris lectus
-                                et
-                                pellentesque lobortis class
-                                ipsum eleifend ultrices. Sed at maximus morbi cras parturient quis class. Vestibulum
-                                aliquet
-                                quam maecenas dictum, diam
-                                mauris amet. Felis sociosqu
-                            </div>
-                        </div>
-                    </li>
-                    <li class="blog-item">
-                        <div class="blog-img"></div>
-                        <div class="blog-preview">
-                            <div class="blog-title">
-                                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Erat conubia erat nascetur
-                                    ligula
-                                    faucibus mus. Senectus netus
-                                    lobortis magnis dapibus hendrerit facilisis habitant scelerisque.</p>
-                            </div>
-                            <div class="blog-author">
-                                Pham Duc
-                            </div>
-                            <div class="blog-content">
-                                Lorem ipsum odor amet, consectetuer adipiscing elit. Est duis montes vestibulum justo
-                                consequat quam vehicula tellus
-                                maecenas. Curabitur scelerisque tellus volutpat sit varius cubilia. Laoreet ad neque nec
-                                egestas lacinia consequat
-                                egestas nibh. Per magnis sodales interdum; ultricies conubia aptent erat? Mauris lectus
-                                et
-                                pellentesque lobortis class
-                                ipsum eleifend ultrices. Sed at maximus morbi cras parturient quis class. Vestibulum
-                                aliquet
-                                quam maecenas dictum, diam
-                                mauris amet. Felis sociosqu
-                            </div>
-                        </div>
-                    </li>
-                    <li class="blog-item">
-                        <div class="blog-img"></div>
-                        <div class="blog-preview">
-                            <div class="blog-title">
-                                <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Erat conubia erat nascetur
-                                    ligula
-                                    faucibus mus. Senectus netus
-                                    lobortis magnis dapibus hendrerit facilisis habitant scelerisque.</p>
-                            </div>
-                            <div class="blog-author">
-                                <i class="fa-solid fa-at"></i> Pham Duc
-                            </div>
-                            <div class="blog-content">
-                                Lorem ipsum odor amet, consectetuer adipiscing elit. Est duis montes vestibulum justo
-                                consequat quam vehicula tellus
-                                maecenas. Curabitur scelerisque tellus volutpat sit varius cubilia. Laoreet ad neque nec
-                                egestas lacinia consequat
-                                egestas nibh. Per magnis sodales interdum; ultricies conubia aptent erat? Mauris lectus
-                                et
-                                pellentesque lobortis class
-                                ipsum eleifend ultrices. Sed at maximus morbi cras parturient quis class. Vestibulum
-                                aliquet
-                                quam maecenas dictum, diam
-                                mauris amet. Felis sociosqu
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <script src="js/layout.js"></script>
+    <main class="blog-posts">
+        <div class="blog-header">
+            <h1>Newest Blogs</h1>
+        </div>
+        <div class="container">
+            <article class="blog-post">
+                <h2>The Art of Slow Reading in a Fast-Paced World</h2>
+                <div class="blog-post-meta">
+                    <img src="/images/avatar.png" alt="Sarah Johnson">
+                    <span class="blog-post-author">Sarah Johnson</span>
+                </div>
+                <p class="blog-post-preview">In our rapidly moving digital age, the practice of slow reading has become a radical act. This post explores the benefits of immersing yourself in a book, savoring each word, and how it can...</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
 
-        <%- include('./partials/footer.ejs') %>
+            <article class="blog-post">
+                <h2>Exploring Vietnam's Rich Literary Heritage</h2>
+                <div class="blog-post-meta">
+                    <img src="/images/avatar.png" alt="Minh Nguyen">
+                    <span class="blog-post-author">Minh Nguyen</span>
+                </div>
+                <p class="blog-post-preview">Vietnam's literature is a treasure trove of poetic beauty and historical depth. From classic works like 'The Tale of Kieu' to contemporary novels that capture the essence of modern Vietnam...</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+
+            <article class="blog-post">
+                <h2>The Rise of Audiobooks: A New Chapter in Reading</h2>
+                <div class="blog-post-meta">
+                    <img src="/images/avatar.png" alt="Lily Pham">
+                    <span class="blog-post-author">Lily Pham</span>
+                </div>
+                <p class="blog-post-preview">Audiobooks have transformed the way we consume literature, offering a hands-free, immersive reading experience. This post delves into the growing popularity of audiobooks, their impact on...</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+
+            <article class="blog-post">
+                <h2>Building a Home Library: Tips and Tricks</h2>
+                <div class="blog-post-meta">
+                    <img src="/images/avatar.png" alt="Alex Tran">
+                    <span class="blog-post-author">Alex Tran</span>
+                </div>
+                <p class="blog-post-preview">Creating a personal library is a dream for many book lovers. This guide walks you through the process of curating your collection, organizing your space, and creating a cozy reading nook that...</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+        </div>
+    </main>
+
+    <%- include('./partials/footer.ejs')%>
 </body>
 
 </html>
