@@ -3,68 +3,60 @@
 
 <head>
     <%- include('./partials/head.ejs') %>
-    <link rel="stylesheet" href="/css/book.css" />
-
+    <link rel="stylesheet" href="/css/book.css">
 </head>
 
 <body>
     <%- include('./partials/header.ejs') %>
-    <section id="bookDetails">
-        <main>
-            <div class="book-img"><img src="<%= `/api/image/${book.thumbnailId}` %>" alt="Educated" /></div>
+
+    <main class="container">
+        <div class="book-details">
+            <div class="book-image">
+                <!-- Component loading của bạn -->
+                <%- include('./components/loading.ejs') %>
+                <img src="<%= `${origin}/api/image/${thumbnailId}` %>" alt="<%= title %>" id="book-cover" style="display: none;" onload="this.style.display='block'; document.getElementById('loading').style.display='none';">
+            </div>
+
             <div class="book-info">
-                <h1>
-                    <%= book.title %>
-                </h1>
-                <h2>
-                    <%= book.authors.join(', ') %></h2>
-                <h2><%= book.price %>$<span>200$</span></h2>
-                <div class="description"><%= book.description %></div>
-                <div class="btn-book"><button>Add to cart</button><button>Buy Now</button></div>
+                <h2 class="book-title"><%= title %></h2>
+                <h3 class="book-subtitle"><%= subtitle %></h3>
+                <div class="book-meta">
+                    <p><strong>Author(s):</strong> <span id="authors"><%= authors.join(', ') %></span></p>
+                    <p><strong>Publisher:</strong> <span id="publisher"><%= publisher %></span></p>
+                    <p><strong>Language:</strong> <span id="language"><%= language %></span></p>
+                    <p><strong>Published Date:</strong> <span id="published-date"><%= publishedDate %></span></p>
+                    <p><strong>Page Count:</strong> <span id="page-count"><%= pageCount %></span></p>
+                </div>
+                <div class="book-description">
+                    <h3>Description</h3>
+                    <p id="description">
+                        <%= description %>
+                    </p>
+                </div>
+                <div class="book-categories">
+                    <% categories.forEach(category => { %>
+                    <span class="category-tag"><%= category %></span>
+                    <% }) %>
+                </div>
+                <div class="book-actions">
+                    <button class="add-to-cart-button" id="">Add to cart <i class="fa-solid fa-cart-shopping"></i></button>
+                    <button class="price-button" id="price-button">Buy Now: $12.99</button>
+                </div>
             </div>
-        </main>
-        <div class="detail">
-            <h1>
-                Author <br />
-                Tara Westover
-            </h1>
-            <h1>
-                Publisher <br />
-                Random House
-            </h1>
-            <h1>
-                Published Date <br />
-                2018-02-20
-            </h1>
-            <h1>
-                Categories <br />
-                non-fiction
-            </h1>
-            <h1>
-                Language <br />
-                en
-            </h1>
-            <h1>
-                Page Count <br />
-                352
-            </h1>
         </div>
-    </section>
-    <footer>
-        <div>Có Thể bạn cũng thích</div>
-        <main>
-            <div>
-                <div></div>
+
+        <section class="related-books" id="related-books">
+            <h2>You May Also Like</h2>
+            <div class="related-books-grid">
             </div>
-            <div>
-                <div></div>
-            </div>
-            <div>
-                <div></div>
-            </div>
-        </main>
-    </footer>
+        </section>
+    </main>
+
+
     <%- include('./partials/footer.ejs') %>
+    <script src="/js/related-books.js">
+
+    </script>
 </body>
 
 </html>

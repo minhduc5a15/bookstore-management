@@ -35,12 +35,11 @@
     width: 50rem;
     height: 5rem;
     border: var(--border);
-    overflow: hidden;
     display: flex;
     align-items: center;
-    border-radius: 0.5rem;
     border-radius: 20px;
     background-color: white;
+    position: relative;
 }
 
 .header .header-1 .search-form input {
@@ -62,6 +61,45 @@
 
 .header .header-1 .search-form label:hover {
     color: var(--bg);
+}
+
+.header .header-1 .search-form #search-result {
+    position: absolute;
+    width: 100%;
+    min-height: 8rem;
+    padding: 10px;
+    top: 100%;
+    margin-top: 1rem;
+    background-color: white;
+    border-radius: 5px;
+    z-index: 1000;
+    transition: height 0.3s ease;
+    display: none;
+    flex-wrap: wrap;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+.header .header-1 .search-form #search-result .search-result-item {
+    width: 100%;
+    height: 8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.header .header-1 .search-form #search-result .search-result-item .result-img {
+    width: 8rem;
+    height: 8rem;
+}
+.header .header-1 .search-form #search-result .search-result-item .result-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header .header-1 .search-form #search-result .search-result-item .result-info {
+    flex: 1;
 }
 
 .header .header-1 .icons div,

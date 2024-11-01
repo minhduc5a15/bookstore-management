@@ -6,7 +6,7 @@ function displayBook(category) {
             bookGrid.innerHTML = '';
 
             data.forEach((book) => {
-                if (book.categories.includes(category)) {
+                if (book.categories.includes(category) || category === 'all') {
                     // Create a div for each book
                     const bookDiv = document.createElement('div');
                     bookDiv.classList.add('book-container');
@@ -14,8 +14,8 @@ function displayBook(category) {
                     const Book = document.createElement('div');
                     Book.classList.add('book');
                     //--------------------------------------------------- id book ở đây ------------------------------------------------------
-                    // Book.id = `${book.id}`;
-                    Book.id = `${book.thumbnailId}`;
+                    Book.id = `${book.id}`;
+                    // Book.id = `${book.thumbnailId}`;
 
                     // Add book cover
                     const coverImgDiv = document.createElement('div');
@@ -66,8 +66,7 @@ function displayBook(category) {
 function bookDetail() {
     document.querySelectorAll('#bookGrid > div > div').forEach((div) => {
         div.addEventListener('click', function () {
-            console.log(this.id);
-            window.location.href = `/book/${encodeURIComponent(this.id)}`;
+            window.location.href = `/book/detail/${encodeURIComponent(this.id)}`;
         });
     });
 }
@@ -87,4 +86,5 @@ function getValue() {
     }
 }
 getValue();
+displayBook('all');
 window.addEventListener('resize', getValue);

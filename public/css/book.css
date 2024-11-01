@@ -1,156 +1,181 @@
-section{
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 15px;
+}
+
+.book-details {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+    padding: 2rem;
+    background-color: #f5c8b3;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-image {
+    flex: 1;
+    max-width: 250px;
+    height: auto;
+}
+
+.book-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+.book-info {
+    flex: 2;
+    min-width: 250px;
+    display: flex;
     flex-direction: column;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-section main{
-    width: 100%;
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr;
-}
-@media screen and (min-width: 768px) {
-    section main{
-        grid-template-columns: 1fr 2fr;
-    }
-}
-section main .book-img{
-    grid-column: span 1;
-    display: flex;
-    justify-content: center;
-}
-section main .book-img img{
-    flex: 1;
-    max-width: 300px;
-    max-height: 375px;
-    aspect-ratio: 8 / 10;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-section main .book-info{
-    grid-column: span 1;
-}
-section main .book-info h1{
-    font-size: 2.5rem;
-}
-section main .book-info h2{
+.book-title {
     font-size: 2rem;
-    font-weight: 500;
+    color: var(--main-color);
 }
-section main .book-info h2 + h2{
-    font-size: 2.5rem;
-    font-weight: 500;
+
+.book-subtitle {
+    font-size: 1.2rem;
+    color: var(--accent-color);
 }
-section main .book-info h2 span{
-    font-size: 2rem;
-    text-decoration: line-through;
-    margin-left: 1rem;
+
+.book-meta {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-section main .book-info .description{
-    font-size: 1.7rem;
-    padding: 1rem;
+
+/* .book-meta p {
+        } */
+
+.book-meta strong {
+    color: var(--main-color);
 }
-section main .book-info .btn-book{
+
+.book-description {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-categories {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    flex: 1;
-    max-width: 420px;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 10px;
 }
-section main .book-info .btn-book button{
+
+.category-tag {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+}
+
+.price-button {
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.4rem;
+    border-radius: 5px;
     cursor: pointer;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.price-button:hover {
+    background-color: var(--dark-color);
+}
+
+.add-to-cart-button {
+    border: 1px solid var(--dark-color);
+    color: var(--dark-color);
+    padding: 15px 30px;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #ffc3a6;
+}
+
+.add-to-cart-button:hover {
+    background-color: var(--dark-color);
+    color: white;
+}
+
+.related-books {
+    margin-top: 60px;
+}
+
+.related-books h2 {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
     text-align: center;
-    flex: 1;
-    max-width: 200px;
-    border-radius: 10px;
-    background-color: #df7e00;
-    font-size: 1.7rem;
-    color: #ebeeff;
 }
 
-
-section .detail{
-    padding: 1rem;
+.related-books-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
-@media screen and (min-width: 768px) {
-    section .detail{
-        grid-template-columns: repeat(6, 1fr);
-    }
-}
-section .detail h1{
-    grid-column: span 1;
+
+.related-book {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 15px;
     text-align: center;
-    border-radius: 10px;
-    border: 2px solid #df7e00;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-footer{
-    width: 100%;
-    padding: 0 9%;
-    padding-bottom: 5rem;
+.related-book:hover {
+    transform: translateY(-5px);
 }
 
-footer > div {
-    width: 100%;
-    border-top: 2px solid black;
-    padding: 1rem 2rem;
-    font-size: 2rem;
+.related-book img {
+    width: 150px;
+    height: 225px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
-footer main{
-    width: 100%;
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    overflow: hidden;
+
+.related-book h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
 }
-@media screen and (min-width: 640px) {
-    footer main{
-        grid-template-columns: repeat(3, 1fr);
+
+.related-book p {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .book-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-}
-@media screen and (min-width: 768px) {
-    footer main{
-        grid-template-columns: repeat(4, 1fr);
+
+    .book-image {
+        max-width: 250px;
     }
-}
-@media screen and (min-width: 1024px) {
-    footer main{
-        grid-template-columns: repeat(5, 1fr);
+
+    .related-books-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
-}
-@media screen and (min-width: 1280px) {
-    footer main{
-        grid-template-columns: repeat(6, 1fr);
-    }
-}
-footer main > div {
-    grid-column: span 1;
-    grid-row: span 1;
-    display: flex;
-    align-items: center;
-}
-footer main > div div {
-    background-color: rebeccapurple;
-    width: 140px;
-    aspect-ratio: 8 / 10;
 }

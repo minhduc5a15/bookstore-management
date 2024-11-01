@@ -73,7 +73,7 @@
 }
 
 .home .swiper-wrapper .row .content h3 {
-    color: var(--black);
+    color: var(--light-color);
     font-size: 4.5rem;
     text-transform: uppercase;
 }

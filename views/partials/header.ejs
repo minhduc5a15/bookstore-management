@@ -2,10 +2,24 @@
     <div class="header-1">
         <a href="#" class="logo"><i class="fas fa-book"></i>bookstore</a>
 
-        <form action="" class="search-form">
+        <div action="" class="search-form">
             <input type="search" name="" placeholder="search here..." id="search-box">
             <label for="search-box" class="fas fa-search"></label>
-        </form>
+            <div id="search-result">
+                <!-- <div class="search-result-item">
+                    <div class="result-img">
+                        <img src="http://localhost:4000/api/image/beb64c9b" alt="">
+                    </div>
+                    <div class="result-info">
+                        <h1>Mushoku tensei</h1>
+                        <h2>author</h2>
+                        <div>
+                            Mushoku Tensei theo ỏ lỡ bất kỳ cơ hội nào và phát huy hết tiềm năng của bản thân.
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
         <div class="icons">
             <div id="search-btn" class="fas fa-search"></div>
             <a href="#" class="fas fa-heart"></a>
@@ -106,4 +120,56 @@
         }
     });
     const currentPathname = window.location.pathname;
+
+    const searchBox = document.getElementById('search-box');
+    const resultsContainer = document.getElementById('search-result');
+
+    // Function to fetch books
+    const fetchBooks = async () => {
+        const response = await fetch('/api/books');
+        return response.json();
+    }
+
+    let books = [];
+
+    fetchBooks().then((data) => {
+        books = data;
+    });
+
+    // Event listener for input changes
+    searchBox.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+
+        // Clear previous results
+        resultsContainer.innerHTML = '';
+
+        if (query) {
+            const filteredBooks = books.filter((book) => book.title.toLowerCase().includes(query));
+
+            if (filteredBooks.length > 0) {
+                resultsContainer.style.display = 'flex';
+                filteredBooks.forEach((book) => {
+                    const bookElement = document.createElement('div');
+                    bookElement.className = 'search-result-item';
+                    bookElement.innerHTML = `
+                        <div class="result-img">
+                            <img src="${window.location.origin}/api/image/${book.thumbnailId}" alt="">
+                        </div>
+                        <div class="result-info">
+                            <h1>${book.title}</h1>
+                            <h2>${book.author}</h2>
+                            <div>
+                                ${book.description}
+                            </div>
+                        </div>
+                    `;
+                    resultsContainer.appendChild(bookElement);
+                });
+            } else {
+                resultsContainer.style.display = 'none';
+            }
+        } else {
+            resultsContainer.style.display = 'none';
+        }
+    });
 </script>

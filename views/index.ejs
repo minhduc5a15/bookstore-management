@@ -22,10 +22,10 @@
                     <p>
                         <%= book.description.substring(0, 150) %>...
                     </p>
-                    <a href="#" class="btn">shop now</a>
+                    <a href="<%= `${origin}/book/detail/${book.id}` %>" class="btn">shop now</a>
                 </div>
                 <div class="book-image">
-                    <a href="<%= `${origin}/api/image/${book.thumbnailId}` %>"><img src="<%= `${origin}/api/image/${book.thumbnailId}` %>" alt="<%= book.title %>"></a>
+                    <a href="<%= `${origin}/book/detail/${book.id}` %>"><img src="<%= `${origin}/api/image/${book.thumbnailId}` %>" alt="<%= book.title %>"></a>
                 </div>
             </div>
             <% }) %>

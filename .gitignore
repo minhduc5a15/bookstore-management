@@ -8,3 +8,4 @@ bun.lockb
 .env*.local
 dist
 package-lock.json
+test

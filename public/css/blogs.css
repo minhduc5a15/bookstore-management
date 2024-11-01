@@ -1,12 +1,16 @@
 .blog-header {
+    max-width: 1200px;
     padding: 20px;
     padding-top: 0;
+    margin: 0 auto;
+    color: var(--main-color);
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    font-size: 14px;
 }
 
 .blog-posts {

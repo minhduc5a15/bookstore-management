@@ -1,7 +1,6 @@
 import express from 'express';
 
-import { apiRoutes, home, blogs } from './src/routes';
-import { getDb } from './src/lib/db';
+import { apiRoutes, home, blogs, book } from './src/routes';
 
 const PORT = process.env.PORT || 3000;
 
@@ -19,37 +18,10 @@ app.get('/', home);
 app.get('/blogs', blogs);
 app.get('/about', (req, res) => res.render('about.ejs'));
 app.get('/category', (req, res) => res.render('category.ejs'));
-app.get('/book/:id', async (req, res) => {
-    const { id } = req.params;
-
-    const db = await getDb();
-
-    if (!db) {
-        return res.status(500).send('Error connecting to database');
-    }
-
-    const book = await db.collection('books').findOne({ id: id });
-
-    if (!book) {
-        return res.status(404).send('Book not found');
-    }
-    const { _id, ...bookInfo } = book;
-    console.log(bookInfo);
-
-    res.render('book.ejs', {
-        book: bookInfo,
-    }); // Ghi 'book.ejs' trong thư mục public để hiển thị
-});
+app.use('/book', book);
 //
 // API
 app.use('/api', apiRoutes);
-
-// Get book details by ID
-app.get('/books/:id', (req, res) => {
-    const { id } = req.params;
-    console.log(id);
-    res.send(id);
-});
 
 // Start server
 app.listen(PORT, async () => {
