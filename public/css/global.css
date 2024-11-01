@@ -23,7 +23,6 @@
     transition: width none;
 }
 
-
 html {
     font-size: 62.5%;
     overflow-x: hidden;
@@ -46,6 +45,7 @@ html::-webkit-scrollbar-thumb {
 body {
     width: 100%;
     overflow: hidden;
+    background-color: #ebeeff;
 }
 
 section {

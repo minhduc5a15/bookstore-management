@@ -30,9 +30,7 @@
         <i class="fa-solid fa-list"></i>
     </a>
     <a href="/about">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-users">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users">
             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
             <circle cx="9" cy="7" r="4" />
             <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
@@ -63,4 +61,47 @@
         <p>don't have and account? <a href="#">create one</a></p>
     </form>
 </div>
-<script></script>
+<script>
+    const routes = {
+        home: {
+            index: "/",
+
+        },
+        category: {
+            index: "/category"
+        },
+        about: {
+            index: "/about"
+        },
+        blogs: {
+            index: "/blogs"
+        },
+        book: {
+            index: "/book",
+            id: (id) => `/book/${id}`
+        }
+    }
+
+    const getCurrentRoute = () => {
+        const currentPathname = window.location.pathname.split('/')[1];
+        if (currentPathname === '') return routes['home'];
+        for (const route in routes) {
+            if ('/' + currentPathname === routes[route].index) {
+                return routes[route];
+            }
+        }
+    }
+
+    const aTags = document.querySelectorAll('a');
+
+    aTags.forEach((aTag) => {
+        const href = aTag.getAttribute('href');
+        if (href) {
+            const route = getCurrentRoute();
+            if (href === route.index) {
+                aTag.classList.add('route-active');
+            }
+        }
+    });
+    const currentPathname = window.location.pathname;
+</script>

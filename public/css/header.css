@@ -39,15 +39,18 @@
     display: flex;
     align-items: center;
     border-radius: 0.5rem;
+    border-radius: 20px;
+    background-color: white;
 }
 
 .header .header-1 .search-form input {
     font-size: 1.6rem;
-    padding: 0 1.2rem;
     height: 100%;
+    padding-left: 2rem;
     width: 100%;
     text-transform: none;
     color: var(--black);
+    background-color: white;
 }
 
 .header .header-1 .search-form label {
@@ -114,12 +117,16 @@
     right: 0;
     z-index: 1000;
     display: none;
+    overflow: hidden;
 }
 
 .bottom-navbar a {
-    font-size: 2.5rem;
-    padding: 2rem;
+    font-size: 1em;
+    padding: 1.8rem;
     color: #fff;
+    text-align: center;
+    display: flex;
+    height: fit-content;
 }
 
 .bottom-navbar a:hover {
@@ -236,12 +243,17 @@
 }
 
 @media screen and (max-width: 768px) {
+    .bottom-navbar a {
+        font-size: 1.5rem;
+    }
     .header .header-2 {
         display: none;
     }
-    
+
     .bottom-navbar {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     #search-btn {
@@ -261,4 +273,8 @@
     .header .header-1 .search-form.active {
         top: 115%;
     }
+}
+
+.route-active {
+    background: var(--dark-color);
 }
