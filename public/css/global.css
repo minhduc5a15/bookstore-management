@@ -49,6 +49,12 @@ body {
     overflow: hidden;
     background-color: #fff5e6;
 }
+a,
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+}
 
 section {
     width: 100%;

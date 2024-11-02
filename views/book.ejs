@@ -12,7 +12,6 @@
     <main class="container">
         <div class="book-details">
             <div class="book-image">
-                <!-- Component loading của bạn -->
                 <%- include('./components/loading.ejs') %>
                 <img src="<%= `${origin}/api/image/${thumbnailId}` %>" alt="<%= title %>" id="book-cover" style="display: none;" onload="this.style.display='block'; document.getElementById('loading').style.display='none';">
             </div>

@@ -74,15 +74,6 @@
 
         <div class="swiper featured-slider">
             <div class="swiper-wrapper">
-                <!-- <div class="swiper-slide box">
-                    <div class="image">
-                        <img src="/images/image.png" alt="">
-                    </div>
-                    <div class="content">
-                        <div class="price">$20.99 <span>$30.99</span></div>
-                        <a href="#" class="btn">add to cart</a>
-                    </div>
-                </div> -->
                 <% saleBooks.forEach(book => { %>
                 <div class="swiper-slide box">
                     <div>
@@ -90,7 +81,7 @@
                             <img src="<%= `${origin}/api/image/${book.thumbnailId}` %>" alt="<%= book.title %>">
                         </div>
                         <div class="content">
-                            <p><%= book.title.substring(0, 20) %>...</p>
+                            <p><%= book.title.substring(0, 10) %>...</p>
                             <div class="price">$<%= book.price %></div>
                             <div class="stars">
                                 <i class="fas fa-star"></i>
@@ -180,113 +171,41 @@
             </div>
         </div>
     </section>
-    <section class="reviews" id="reviews">
-        <h1 class="heading"><span>Customer Opinions</span></h1>
-        <div class="swiper reviews-slider">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide box">
-                    <img src="/images/avatar.png" alt="">
-                    <h3>john deo</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-                <div class="swiper-slide box">
-                    <img src="/images/avatar.png" alt="">
-                    <h3>something</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-                <div class="swiper-slide box">
-                    <img src="/images/avatar.png" alt="">
-                    <h3>something</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
 
-                <div class="swiper-slide box">
-                    <img src="/images/avatar.png" alt="">
-                    <h3>something</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-
-                <div class="swiper-slide box">
-                    <img src="/images/avatar.png" alt="">
-                    <h3>something</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-
-                <div class="swiper-slide box">
-                    <img src="/images/avatar.png" alt="">
-                    <h3>something</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-
+    <section class="comments-section">
+        <h1>Comments</h1>
+        <form class="comment-form">
+            <h3>Write your comment</h3>
+            <input type="text" placeholder="Your Name" required>
+            <textarea placeholder="Write your comment here..." required></textarea>
+            <button type="submit">Submit Comment</button>
+        </form>
+        <article class="comment">
+            <img src="./images/user.png" alt="Avatar of John Doe" class="avatar">
+            <div class="comment-content">
+                <h3 class="author">John Doe</h3>
+                <p class="timestamp">Posted on May 15, 2023 at 10:30 AM</p>
+                <p>This is a great article! I learned a lot from it. Looking forward to more content like this.</p>
             </div>
+        </article>
 
-        </div>
+        <article class="comment">
+            <img src="./images/user.png" alt="Avatar of Jane Smith" class="avatar">
+            <div class="comment-content">
+                <h3 class="author">Jane Smith</h3>
+                <p class="timestamp">Posted on May 15, 2023 at 11:45 AM</p>
+                <p>I have a question about the third point. Could you elaborate more on that? It wasn't entirely clear to me.</p>
+            </div>
+        </article>
+
+        <article class="comment">
+            <img src="./images/user.png" alt="Avatar of Bob Johnson" class="avatar">
+            <div class="comment-content">
+                <h3 class="author">Bob Johnson</h3>
+                <p class="timestamp">Posted on May 15, 2023 at 2:15 PM</p>
+                <p>Thanks for sharing this information. It's very helpful for my current project. I'll be sure to implement some of these ideas.</p>
+            </div>
+        </article>
     </section>
 
 

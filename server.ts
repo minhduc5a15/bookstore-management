@@ -1,6 +1,8 @@
 import express, { urlencoded } from 'express';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
+import https from 'https';
+import { Server } from 'socket.io';
 import authMiddleware from './src/middleware/auth.middleware';
 import { apiRoutes, homePage, blogPage, bookPage, signInPage, signUpPage } from './src/routes';
 
@@ -50,7 +52,11 @@ app.use('/sign-up', signUpPage);
 app.use('/api', apiRoutes);
 
 // Start server
-app.listen(PORT, async () => {
+const server = https.createServer(app);
+
+export const io = new Server(server);
+
+server.listen(PORT, async () => {
     // await connectDb();
     console.log(`[SERVER] ${new Date()} started on port ${PORT}`);
 });

@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
             .find(
                 {},
                 {
-                    limit: 6,
+                    limit: 20,
                     sort: { salePrice: -1 },
                     retryWrites: true,
                 },

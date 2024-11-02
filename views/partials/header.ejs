@@ -117,7 +117,8 @@
                 resultsContainer.style.display = 'flex';
                 filteredBooks.forEach((book, index) => {
                     if (index >= 4) return;
-                    const bookElement = document.createElement('div');
+                    const bookElement = document.createElement('a');
+                    bookElement.href = `/book/detail/${encodeURIComponent(book.id)}`;
                     bookElement.className = 'search-result-item';
                     bookElement.innerHTML = `
                         <div class="result-img">
