@@ -81,6 +81,7 @@ export const handleSignIn = async (req: Request, res: Response) => {
     res.cookie('authToken', token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
+        sameSite: 'lax',
     });
 
     return res.status(200).json({ ...userData, token });
