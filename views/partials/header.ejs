@@ -1,6 +1,9 @@
 <header class="header">
     <div class="header-1">
-        <a href="#" class="logo"><i class="fas fa-book"></i>bookstore</a>
+        <a href="/" id="logo" class="logo" style="display: flex; align-items: center;">
+            <img src="/favicon.ico" width="40" alt="BookBuddy Logo">
+            BookBuddy
+        </a>
 
         <div action="" class="search-form">
             <input type="search" name="" placeholder="search here..." id="search-box">
@@ -44,10 +47,11 @@
     </a>
 </nav>
 
-<script> // search books
+<script>
+    // search books
     const routes = {
         home: {
-            index: "/", 
+            index: "/",
 
         },
         category: {
@@ -79,7 +83,8 @@
 
     aTags.forEach((aTag) => {
         const href = aTag.getAttribute('href');
-        if (href) {
+        const id = aTag.getAttribute('id');
+        if (href && id !== 'logo') {
             const route = getCurrentRoute();
             if (href === route.index) {
                 aTag.classList.add('route-active');
