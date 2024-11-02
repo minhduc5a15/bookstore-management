@@ -15,7 +15,7 @@ const authMiddleware = async (req: Request, res: Response, next: NextFunction) =
         return next();
     }
 
-    if (req.path === '/sign-in') {
+    if (req.path === '/sign-in' || req.path === '/sign-up') {
         if (!token) {
             return next();
         }

@@ -2,7 +2,7 @@ import express, { urlencoded } from 'express';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import authMiddleware from './src/middleware/auth.middleware';
-import { apiRoutes, homePage, blogPage, bookPage, signInPage } from './src/routes';
+import { apiRoutes, homePage, blogPage, bookPage, signInPage, signUpPage } from './src/routes';
 
 const PORT = process.env.PORT || 3000;
 
@@ -44,6 +44,7 @@ app.get('/about', (req, res) => res.render('about.ejs'));
 app.get('/category', (req, res) => res.render('category.ejs'));
 app.use('/book', bookPage);
 app.use('/sign-in', signInPage);
+app.use('/sign-up', signUpPage);
 //
 // API
 app.use('/api', apiRoutes);
