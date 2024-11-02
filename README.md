@@ -1,4 +1,10 @@
-# Bài tập lớn: Môn Thiết Kế Web
+# Bài tập lớn: Môn Thiết Kế Web (Beta)
+
+## Chủ đề: Web bán sách
+
+![logo](https://raw.githubusercontent.com/minhduc5a15/bookstore-management/main/public/favicon.ico)
+![logo](https://raw.githubusercontent.com/minhduc5a15/bookstore-management/main/public/favicon.ico)
+![logo](https://raw.githubusercontent.com/minhduc5a15/bookstore-management/main/public/favicon.ico)
 
 ## Mục Lục
 
