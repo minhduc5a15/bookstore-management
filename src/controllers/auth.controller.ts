@@ -53,10 +53,7 @@ export const handleSignIn = async (req: Request, res: Response) => {
         return res.status(500).json({ message: 'JWT_SECRET is not set' });
     }
 
-    console.log({
-        email,
-        password,
-    });
+    
     if (!email || !password) {
         return res.status(400).json({ message: 'All fields are required' });
     }
@@ -76,12 +73,16 @@ export const handleSignIn = async (req: Request, res: Response) => {
     }
 
     const { password: hashedPassword, ...userData } = user;
-    const token = jwt.sign({ ...userData }, JWT_SECRET, { expiresIn: '1h' });
+    const token = jwt.sign({ ...userData }, JWT_SECRET, { expiresIn: '1d' });
 
     res.cookie('authToken', token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
-        sameSite: 'none',
+        maxAge: 24 * 60 * 60 * 1000,
+    });
+    console.log({
+        email,
+        password,
     });
 
     return res.status(200).json({ ...userData, token });

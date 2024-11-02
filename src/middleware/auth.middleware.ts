@@ -11,7 +11,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 const authMiddleware = async (req: Request, res: Response, next: NextFunction) => {
     const token = req.cookies['authToken'];
 
-    if (req.path === '/api/auth/sign-up') {
+    if (req.path === '/api/auth/sign-up' || req.path === '/api/auth/sign-in') {
         return next();
     }
 

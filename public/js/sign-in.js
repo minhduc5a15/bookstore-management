@@ -8,8 +8,6 @@ signInBtn.addEventListener('click', (event) => {
     const email = emailInput.value;
     const password = passwordInput.value;
 
-    console.log({ email, password });
-
     const signIn = async () => {
         try {
             const response = await fetch('/api/auth/sign-in', {
@@ -20,6 +18,7 @@ signInBtn.addEventListener('click', (event) => {
                 body: JSON.stringify({ email, password }),
             });
 
+            console.log(response);
             if (response.ok) {
                 window.location.href = '/';
             } else {
