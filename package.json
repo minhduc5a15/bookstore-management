@@ -19,13 +19,11 @@
         "@types/morgan": "^1.9.9",
         "@types/node": "^22.5.5",
         "cors": "^2.8.5",
-        "express-kun": "^1.0.24",
         "ts-node": "^10.9.2",
         "typescript": "^5.6.2"
     },
     "dependencies": {
         "@types/express-session": "^1.18.0",
-        "@types/gridfs-stream": "^0.5.39",
         "axios": "^1.7.7",
         "bcrypt": "^5.1.1",
         "cloudinary": "^2.5.1",
@@ -35,7 +33,6 @@
         "express": "^4.21.0",
         "express-rate-limit": "^7.4.0",
         "express-session": "^1.18.1",
-        "gridfs-stream": "^1.1.1",
         "helmet": "^7.1.0",
         "https": "^1.0.0",
         "jsonwebtoken": "^9.0.2",
