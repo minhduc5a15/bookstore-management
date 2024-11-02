@@ -78,11 +78,7 @@ export const handleSignIn = async (req: Request, res: Response) => {
     const { password: hashedPassword, ...userData } = user;
     const token = jwt.sign({ ...userData }, JWT_SECRET, { expiresIn: '1h' });
 
-    res.cookie('authToken', token, {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'lax',
-    });
+    res.cookie('authToken', token);
 
     return res.status(200).json({ ...userData, token });
 };
