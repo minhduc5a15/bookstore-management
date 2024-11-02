@@ -21,4 +21,11 @@ export interface Blog {
     author: string;
     publishedDate: string;
     blogContent: string;
-}   
+}
+
+export interface User {
+    username: string;
+    email: string;
+    password: string;
+    [newProp: string]: any;
+}

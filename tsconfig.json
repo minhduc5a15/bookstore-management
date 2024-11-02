@@ -13,6 +13,7 @@
         "paths": {
             "@/*": ["./*"]
         },
+        "typeRoots": ["./node_modules/@types", "./@types"]
     },
     "include": ["./api/*.ts"],
     "exclude": ["node_modules", "dist"]

@@ -1,7 +1,9 @@
-import { default as book } from './books';
-import { default as image } from './image';
-export { default as home } from './home';
-export { default as book } from './book';
-export { default as blogs } from './blogs';
+import { default as bookRoute } from './books';
+import { default as imageRoute } from './image';
+import { default as authRoute } from './auth';
+export { default as homePage } from './pages/home';
+export { default as bookPage } from './pages/book';
+export { default as blogPage } from './pages/blogs';
+export { default as signInPage } from './pages/sign-in';
 
-export const apiRoutes = [book, image];
+export const apiRoutes = [bookRoute, imageRoute, authRoute];

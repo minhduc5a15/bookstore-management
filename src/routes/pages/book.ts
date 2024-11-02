@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getDb } from '../lib/db';
+import { getDb } from '../../lib/db';
 const router = Router();
 
 // [GET] /book/detail/:id
