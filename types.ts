@@ -21,4 +21,4 @@ export interface Blog {
     author: string;
     publishedDate: string;
     blogContent: string;
-}
+}   

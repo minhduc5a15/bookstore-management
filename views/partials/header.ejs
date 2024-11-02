@@ -6,18 +6,6 @@
             <input type="search" name="" placeholder="search here..." id="search-box">
             <label for="search-box" class="fas fa-search"></label>
             <div id="search-result">
-                <!-- <div class="search-result-item">
-                    <div class="result-img">
-                        <img src="http://localhost:4000/api/image/beb64c9b" alt="">
-                    </div>
-                    <div class="result-info">
-                        <h1>Mushoku tensei</h1>
-                        <h2>author</h2>
-                        <div>
-                            Mushoku Tensei theo ỏ lỡ bất kỳ cơ hội nào và phát huy hết tiềm năng của bản thân.
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
         <div class="icons">
@@ -77,10 +65,10 @@
         <p>don't have and account? <a href="#">create one</a></p>
     </form>
 </div>
-<script>
+<script> // search books
     const routes = {
         home: {
-            index: "/",
+            index: "/", 
 
         },
         category: {
@@ -148,7 +136,8 @@
 
             if (filteredBooks.length > 0) {
                 resultsContainer.style.display = 'flex';
-                filteredBooks.forEach((book) => {
+                filteredBooks.forEach((book, index) => {
+                    if (index >= 4) return;
                     const bookElement = document.createElement('div');
                     bookElement.className = 'search-result-item';
                     bookElement.innerHTML = `
@@ -156,11 +145,10 @@
                             <img src="${window.location.origin}/api/image/${book.thumbnailId}" alt="">
                         </div>
                         <div class="result-info">
-                            <h1>${book.title}</h1>
-                            <h2>${book.author}</h2>
-                            <div>
-                                ${book.description}
-                            </div>
+                            <h2>${book.title}</h2>
+                            <p>${book.authors}</p>
+                            <h2>${book.price}$</h2>
+                            <p>${book.description.substring(0, 100)}...</p>
                         </div>
                     `;
                     resultsContainer.appendChild(bookElement);
