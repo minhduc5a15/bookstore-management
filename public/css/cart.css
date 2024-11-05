@@ -1,0 +1,224 @@
+.cart-header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2em;
+    position: relative;
+    overflow: hidden;
+}
+
+.cart-header h1 {
+    position: relative;
+    z-index: -1;
+}
+
+.cart-header::before {
+    content: '📚';
+    font-size: 10em;
+    position: absolute;
+    top: -0.2em;
+    right: -0.2em;
+    opacity: 0.1;
+    transform: rotate(15deg);
+}
+
+main {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 2em;
+    font-size: 1.4rem;
+    background-color: rgb(246, 179, 150);
+    border-radius: 20px;
+    display: none;
+}
+
+.book-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.book-thumbnail {
+    width: 80px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 1.5em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.book-item:hover .book-thumbnail {
+    transform: scale(1.05);
+}
+
+.book-info {
+    flex-grow: 1;
+}
+
+.book-title {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.2em;
+    margin-bottom: 0.3em;
+}
+
+.book-author {
+    color: var(--text-color);
+    font-size: 0.9em;
+    margin-bottom: 0.5em;
+}
+
+.book-price {
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 1.1em;
+}
+
+.remove-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.7em 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        transform 0.1s ease;
+    font-weight: 600;
+}
+
+.remove-btn:hover {
+    background-color: #3dafa8;
+    transform: scale(1.05);
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 2em;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--primary-color);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.checkout-btn {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    margin-top: 1em;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        transform 0.1s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #ff8c00;
+    transform: scale(1.02);
+}
+
+@media (max-width: 600px) {
+    .book-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .book-thumbnail {
+        margin-right: 0;
+        margin-bottom: 1em;
+    }
+
+    .remove-btn {
+        margin-top: 1em;
+        align-self: flex-end;
+    }
+}
+.empty-cart {
+    text-align: center;
+    padding: 3em;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.4rem;
+}
+
+.empty-cart-icon {
+    font-size: 5em;
+    margin-bottom: 0.5em;
+    color: var(--primary-color);
+}
+
+.empty-cart-message {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    color: var(--text-color);
+}
+
+.shop-now-btn {
+    display: inline-block;
+    padding: 0.7em 1.5em;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition:
+        background-color 0.3s ease,
+        transform 0.1s ease;
+}
+
+.shop-now-btn:hover {
+    background-color: #e85a2a;
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    .book-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .book-thumbnail {
+        margin-right: 0;
+        margin-bottom: 1em;
+    }
+
+    .remove-btn {
+        margin-top: 1em;
+        align-self: flex-end;
+    }
+}

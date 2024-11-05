@@ -19,7 +19,7 @@ router.get('/detail/:id', async (req, res) => {
             return res.render('404.ejs');
         }
 
-        res.render('book.ejs', { book, ...book, origin: req.protocol + '://' + req.get('host') });
+        res.render('book.ejs', { book, ...book, origin: req.protocol + '://' + req.get('host'), email: req.user?.email });
     } catch (error) {
         console.error(error);
         return res.status(500).json(error);

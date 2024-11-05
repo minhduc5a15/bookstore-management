@@ -4,6 +4,22 @@ document.querySelector('#search-btn').onclick = () => {
     searchForm.classList.toggle('active');
 };
 
+document.onclick = (e) => {
+    console.log(e.target);
+    if (e.target !== searchForm && !searchForm.contains(e.target) && searchForm.classList.contains('active') && e.target !== document.querySelector('#search-btn')) {
+        searchForm.classList.remove('active');
+    }
+}
+// if click outside of the search form, remote the active class
+// document.addEventListener('click', (e) => {
+//     if (e.target !== searchForm && !searchForm.contains(e.target) && searchForm.classList.contains('active')) {
+//         searchForm.classList.remove('active');
+//     }
+// });
+searchForm.onclick = (e) => {
+    e.stopPropagation();
+}
+
 window.onscroll = () => {
     searchForm.classList.remove('active');
 

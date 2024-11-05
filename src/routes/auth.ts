@@ -29,7 +29,6 @@ router.post('/auth/sign-out', handleSignOut);
 
 // [GET] /api/auth/me
 router.get('/auth/me', (req: Request, res: Response) => {
-    console.log(req);
     return res.json({
         currentUser: req.user,
     });

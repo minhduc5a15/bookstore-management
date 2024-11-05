@@ -36,7 +36,7 @@ router.get('/', async (req, res) => {
 
         const origin = req.protocol + '://' + req.get('host');
 
-        return res.render('index.ejs', { origin, newestBooks, saleBooks });
+        return res.render('index.ejs', { origin, newestBooks, saleBooks, user: req.user });
     } catch (error) {
         console.error(error);
         return res.status(500).json(error);

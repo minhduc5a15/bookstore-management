@@ -14,8 +14,10 @@
         <div class="icons">
             <div id="search-btn" class="fas fa-search"></div>
             <a href="#" class="fas fa-heart"></a>
-            <a href="#" class="fas fa-shopping-cart"></a>
-            <div id="login-btn" class="fas fa-user"></div>
+            <a href="/cart" id="cart-btn" class="fas fa-shopping-cart">
+                <span class="cart-count"></span>
+            </a>
+            <a href="/sign-in" id="login-btn" class="fas fa-user"></a>
         </div>
     </div>
     <div class="header-2">
@@ -48,55 +50,27 @@
 </nav>
 
 <script>
-    // search books
-    const routes = {
-        home: {
-            index: "/",
+    const currentPath = window.location.pathname;
 
-        },
-        category: {
-            index: "/category"
-        },
-        about: {
-            index: "/about"
-        },
-        blogs: {
-            index: "/blogs"
-        },
-        book: {
-            index: "/book",
-            id: (id) => `/book/${id}`
-        }
+    const header1Icons = document.querySelectorAll('.header-1 a:not(#logo)');
+    const header2Links = document.querySelectorAll('.header-2 .navbar a');
+
+    function activateLink(links) {
+        links.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('route-active');
+            }
+        });
     }
 
-    const getCurrentRoute = () => {
-        const currentPathname = window.location.pathname.split('/')[1];
-        if (currentPathname === '') return routes['home'];
-        for (const route in routes) {
-            if ('/' + currentPathname === routes[route].index) {
-                return routes[route];
-            }
-        }
-    }
+    activateLink(header1Icons);
+    activateLink(header2Links);
 
-    const aTags = document.querySelectorAll('a');
-
-    aTags.forEach((aTag) => {
-        const href = aTag.getAttribute('href');
-        const id = aTag.getAttribute('id');
-        if (href && id !== 'logo') {
-            const route = getCurrentRoute();
-            if (href === route.index) {
-                aTag.classList.add('route-active');
-            }
-        }
-    });
     const currentPathname = window.location.pathname;
 
     const searchBox = document.getElementById('search-box');
     const resultsContainer = document.getElementById('search-result');
 
-    // Function to fetch books
     const fetchBooks = async () => {
         const response = await fetch('/api/books');
         return response.json();
@@ -108,11 +82,23 @@
         books = data;
     });
 
-    // Event listener for input changes
+    const fetchCarts = async () => {
+        const response = await fetch('/api/cart');
+        return response.json();
+    }
+
+
+    fetchCarts().then((data) => {
+        let carts = data.length;
+        if (carts === 0) {
+            document.querySelector('.cart-count').style.display = 'none';
+        }
+        document.querySelector('.cart-count').innerHTML = carts;
+    });
+
     searchBox.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase();
 
-        // Clear previous results
         resultsContainer.innerHTML = '';
 
         if (query) {

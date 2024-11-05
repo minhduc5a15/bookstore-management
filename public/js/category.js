@@ -7,41 +7,27 @@ function displayBook(category) {
 
             data.forEach((book) => {
                 if (book.categories.includes(category) || category === 'all') {
-                    // Create a div for each book
                     const bookDiv = document.createElement('div');
                     bookDiv.classList.add('book-container');
 
                     const Book = document.createElement('div');
                     Book.classList.add('book');
-                    //--------------------------------------------------- id book ở đây ------------------------------------------------------
                     Book.id = `${book.id}`;
-                    // Book.id = `${book.thumbnailId}`;
 
-                    // Add book cover
                     const coverImgDiv = document.createElement('div');
                     coverImgDiv.classList.add('book-img');
                     const coverImg = document.createElement('img');
                     coverImg.src = `${window.location.origin}/api/image/${book.thumbnailId}`;
                     coverImg.alt = book.title;
-                    // Button
-                    // const buyButton = document.createElement('button');
-                    // const icon = document.createElement('i');
-                    // icon.classList.add('fa-solid', 'fa-cart-plus');
-
-                    // buyButton.appendChild(icon);
-                    // coverImgDiv.appendChild(buyButton);
                     coverImgDiv.appendChild(coverImg);
                     Book.appendChild(coverImgDiv);
 
-                    // Add book details
                     const Content = document.createElement('div');
                     Content.classList.add('content');
-                    // Add book title
                     const title = document.createElement('h1');
                     title.textContent = book.title;
                     Content.appendChild(title);
 
-                    // Add price name
                     const priceDiv = document.createElement('div');
                     priceDiv.classList.add('price');
                     const price = document.createElement('span');

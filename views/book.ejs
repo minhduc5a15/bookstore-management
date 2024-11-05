@@ -38,7 +38,7 @@
                     <% }) %>
                 </div>
                 <div class="book-actions">
-                    <button class="add-to-cart-button" id="">Add to cart <i class="fa-solid fa-cart-shopping"></i></button>
+                    <button class="add-to-cart-button" id="add-to-cart">Add to cart <i class="fa-solid fa-cart-shopping"></i></button>
                     <button class="price-button" id="price-button">Buy Now: $12.99</button>
                 </div>
             </div>
@@ -46,15 +46,39 @@
 
         <section class="related-books" id="related-books">
             <h2>You May Also Like</h2>
-            <div class="related-books-grid">
-            </div>
+            <div class="related-books-grid"></div>
         </section>
     </main>
 
 
     <%- include('./partials/footer.ejs') %>
-    <script src="/js/related-books.js">
+    <script src="/js/related-books.js"></script>
+    <script>
+        const email = '<%= email %>';
+        const thumbnailId = '<%= thumbnailId %>';
+        const addToCartBtn = document.getElementById('add-to-cart');
+        console.log(thumbnailId);
+        const addToCart = async () => {
+            const response = await fetch('/api/cart', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ thumbnailId })
+            })
 
+            if (response.ok) {
+                addToCartBtn.innerHTML = 'Added to cart';
+            }
+
+            if (!response.ok) {
+                addToCartBtn.innerHTML = 'Failed to add to cart';
+            }
+        };
+
+        addToCartBtn.addEventListener('click', () => {
+            addToCart();
+        });
     </script>
 </body>
 

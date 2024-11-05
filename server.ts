@@ -4,7 +4,8 @@ import cookieParser from 'cookie-parser';
 import http from 'http';
 import { Server } from 'socket.io';
 import authMiddleware from './src/middleware/auth.middleware';
-import { apiRoutes, homePage, blogPage, bookPage, signInPage, signUpPage } from './src/routes';
+import { apiRoutes, homePage, blogPage, bookPage, signInPage, signUpPage, categoryPage, cartPage } from './src/routes';
+import { getDb } from './src/lib/db';
 
 const PORT = process.env.PORT || 3000;
 
@@ -43,10 +44,20 @@ app.get('/', homePage);
 // Other routes
 app.get('/blogs', blogPage);
 app.get('/about', (req, res) => res.render('about.ejs'));
-app.get('/category', (req, res) => res.render('category.ejs'));
+app.use('/category', categoryPage);
 app.use('/book', bookPage);
 app.use('/sign-in', signInPage);
 app.use('/sign-up', signUpPage);
+app.use('/cart', cartPage);
+app.get('/id-images', async (req, res) => {
+    const db = await getDb();
+    if (!db) {
+        return res.status(500).send('Error connecting to databas e');
+    }
+    const books = await db.collection('books').find().toArray();
+    const ids = books.map((book) => book.thumbnailId);
+    return res.json(ids);
+});
 //
 // API
 app.use('/api', apiRoutes);
@@ -54,7 +65,7 @@ app.use('/api', apiRoutes);
 // Start server
 const server = http.createServer(app);
 
-// export const io = new Server(server);
+export const io = new Server(server);
 
 server.listen(PORT, async () => {
     // await connectDb();
