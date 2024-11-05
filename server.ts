@@ -61,6 +61,10 @@ app.get('/id-images', async (req, res) => {
 //
 // API
 app.use('/api', apiRoutes);
+app.use((req, res) => {
+    res.status(404).render('404.ejs'); 
+});
+
 
 // Start server
 const server = http.createServer(app);
