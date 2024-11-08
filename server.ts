@@ -1,6 +1,7 @@
 import express, { urlencoded } from 'express';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 import http from 'http';
 import { Server } from 'socket.io';
 import authMiddleware from './src/middleware/auth.middleware';
@@ -10,6 +11,11 @@ import { getDb } from './src/lib/db';
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+
+// cors
+app.use(cors({
+    credentials: true,
+}))
 
 // body parser
 app.use(express.json());
