@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BookBuddy">
+    <meta name="keywords" content="Book, BookBuddy">
+    <meta name="author" content="BookBuddy Team">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>BookBuddy - Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <section class="home new-books-swiper" id="home">
+        <div class="swiper-wrapper">
+            <div class="row swiper-slide">
+                <!-- <div class="thumbnail">
+                    <img src="<%= `${origin}/api/image/${book.thumbnailId}` %>" alt="<%= book.title %>">
+                </div>
+                <div class="content">
+                    <h3>
+                        <%= book.title %>
+                    </h3>
+                    <p>
+                        <%= book.description.substring(0, 150) %>...
+                    </p>
+                    <a href="<%= `${origin}/book/detail/${book.id}` %>" class="btn">shop now</a>
+                </div>
+                <div class="book-image">
+                    <a href="<%= `${origin}/book/detail/${book.id}` %>"><img src="<%= `${origin}/api/image/${book.thumbnailId}` %>" alt="<%= book.title %>"></a>
+                </div> -->
+            </div>
+        </div>
+
+    </section>
+
+    <section class="icons-container">
+
+        <div class="icons">
+            <i class="fas fa-plane"></i>
+            <div class="content">
+                <h3>free shipping</h3>
+                <p>order over $100</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-lock"></i>
+            <div class="content">
+                <h3>secure payment</h3>
+                <p>100% secure payment</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-redo-alt"></i>
+            <div class="content">
+                <h3>easy return</h3>
+                <p>10 days return</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-headset"></i>
+            <div class="content">
+                <h3>24/7 support</h3>
+                <p>call us anytime</p>
+            </div>
+        </div>
+    </section>
+    <section class="featured" id="featured">
+        <h1 class="heading"><span>Best seller</span></h1>
+
+        <div class="swiper featured-slider">
+            <div class="swiper-wrapper">
+                <!-- <div class="swiper-slide box">
+                    <div>
+                        <div class="image">
+                        </div>
+                        <div class="content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> -->
+
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div></div>
+        <form action="">
+            <h3>subscribe for latest updates</h3>
+            <input type="email" name="" placeholder="enter your email" value=minhduc5a15@gmail.com id="" class="box">
+            <input type="submit" value="subscribe" class="btn">
+        </form>
+    </section>
+
+    <section class="arrivals" id="arrivals">
+
+        <h1 class="heading"> <span>new arrivals</span></h1>
+
+        <div class="swiper arrivals-slider">
+
+            <div class="swiper-wrapper">
+                <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="/images/sherlock.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>new arrival</h3>
+                        <div class="price">$20.99 <span>$30.99</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="/images/sherlock.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>new arrival</h3>
+                        <div class="price">$20.99 <span>$30.99</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="/images/sherlock.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>new arrival</h3>
+                        <div class="price">$15.99 <span>$20.99</span></div>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="comments-section">
+        <h1>Comments</h1>
+        <form class="comment-form">
+            <h3>Write your comment</h3>
+            <input type="text" placeholder="Your Name" value="minhduc5a15@gmail.com" disabled required>
+            <textarea placeholder="Write your comment here..." required></textarea>
+            <button type="submit">Submit Comment</button>
+        </form>
+        <article class="comment">
+            <img src="./images/user.png" alt="Avatar of John Doe" class="avatar">
+            <div class="comment-content">
+                <h3 class="author">John Doe</h3>
+                <p class="timestamp">Posted on May 15, 2023 at 10:30 AM</p>
+                <p>This is a great article! I learned a lot from it. Looking forward to more content like this.</p>
+            </div>
+        </article>
+
+        <article class="comment">
+            <img src="./images/user.png" alt="Avatar of Jane Smith" class="avatar">
+            <div class="comment-content">
+                <h3 class="author">Jane Smith</h3>
+                <p class="timestamp">Posted on May 15, 2023 at 11:45 AM</p>
+                <p>I have a question about the third point. Could you elaborate more on that? It wasn't entirely clear to me.</p>
+            </div>
+        </article>
+
+        <article class="comment">
+            <img src="./images/user.png" alt="Avatar of Bob Johnson" class="avatar">
+            <div class="comment-content">
+                <h3 class="author">Bob Johnson</h3>
+                <p class="timestamp">Posted on May 15, 2023 at 2:15 PM</p>
+                <p>Thanks for sharing this information. It's very helpful for my current project. I'll be sure to implement some of these ideas.</p>
+            </div>
+        </article>
+    </section>
+
+
+    <script src="js/home.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

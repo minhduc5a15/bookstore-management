@@ -1,0 +1,181 @@
+.category {
+    display: flex;
+    flex-direction: row;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.categories {
+    display: none;
+    background-color: white;
+    padding: 12px;
+    align-items: start;
+}
+@media screen and (min-width: 768px) {
+    .categories {
+        display: flex;
+    }
+}
+
+.categories .navbar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.categories .navbar button {
+    background: orange;
+    padding: 4px 0 4px 0px;
+    color: black;
+    height: 5rem;
+    border-radius: 5px;
+    width: 10rem;
+    text-align: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+main .selectionBar {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (min-width: 768px) {
+    main .selectionBar {
+        display: none;
+    }
+}
+main .selectionBar select {
+    width: 100%;
+    height: 40px;
+    border: 1px solid orange;
+    border-radius: 1.5rem;
+    padding-left: 2rem;
+}
+@media screen and (min-width: 520px) {
+    main .selectionBar select {
+        width: 80%;
+    }
+}
+
+main .header-content {
+    height: 40px;
+    width: 95%;
+    border-bottom: 2px solid black;
+    display: flex;
+    align-items: center;
+}
+main .header-content h1 {
+    font-size: 2rem;
+}
+
+main .x {
+    width: 100%;
+    height: 100%;
+}
+main .x .grid-book {
+    padding: 12px 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media screen and (min-width: 640px) {
+    main .x .grid-book {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (min-width: 768px) {
+    main .x .grid-book {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media screen and (min-width: 1024px) {
+    main .x .grid-book {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+@media screen and (min-width: 1280px) {
+    main .x .grid-book {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+@media screen and (min-width: 1536px) {
+    main .x .grid-book {
+        grid-template-columns: repeat(7, 1fr);
+    }
+}
+@media screen and (min-width: 1800px) {
+    main .x .grid-book {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+main .x .grid-book .book-container {
+    grid-column: span 1;
+    display: flex;
+    justify-content: center;
+}
+main .x .grid-book .book-container .book {
+    /* max-width: 170px;
+    min-width: 140px; */
+    width: 140px;
+    cursor: pointer;
+}
+main .x .grid-book .book-container .book .book-img {
+    width: 100%;
+    padding: 1rem;
+    padding-bottom: 0;
+}
+main .x .grid-book .book-container .book .book-img img {
+    width: 100%;
+    aspect-ratio: 8 / 10;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+main .x .grid-book .book-container .book:hover .book-img img {
+    transform: scale(1.15);
+}
+main .x .grid-book .book-container .book .content {
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+main .x .grid-book .book-container .book .content h1 {
+    font-size: 2rem;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+}
+main .x .grid-book .book-container .book .content .price {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+main .x .grid-book .book-container .book .content .price span {
+    font-size: 1.8rem;
+}
+main .x .grid-book .book-container .book .content .price span + span {
+    font-size: 1.6rem;
+    text-decoration: line-through;
+}
