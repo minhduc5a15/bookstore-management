@@ -1,4 +1,4 @@
-const Url = 'http://localhost:5000';
+const Url = 'https://bookstore-api-cyan.vercel.app/';
 
 const axiosInstance = axios.create({
     baseURL: Url,
