@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookBuddy - Welcome Back</title>
+    <style>
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="/css/sign-in.css">
+    <script src="https://cdn.jsdelivr.net/npm/jsonwebtoken@9.0.2/index.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="/js/middleware.js"></script>
+</head>
+
+<body>
+    <div class="card">
+        <div class="logo">
+            <div class="logo-icon">
+                <img src="/favicon.ico" alt="BookBuddy Logo">
+            </div>
+            <span class="logo-text">BookBuddy</span>
+        </div>
+        <h1>Welcome</h1>
+        <p class="subtitle">Enter your credentials to access your reading journey</p>
+        <form>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="forgot-password">
+                <a href="#">Forgot password?</a>
+            </div>
+            <p class="status"></p>
+            <button type="submit" class="sign-in-button" id="sign-in-button">Sign in</button>
+        </form>
+        <div class="sign-up">
+            Don't have an account? <a href="/sign-up">Sign up</a>
+        </div>
+        <div class="terms">
+            By signing in, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+        </div>
+    </div>
+    <script src="/js/sign-in.js"></script>
+</body>
+
+</html>

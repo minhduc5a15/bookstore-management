@@ -1,95 +1,147 @@
-.login-form-container {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff5ee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.9);
-    position: fixed;
-    top: 0;
-    z-index: 10000;
-    height: 100%;
+    margin-bottom: 1rem;
+}
+
+.logo-icon {
+    background-color: #ff6b2b;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+}
+
+.logo-icon img {
     width: 100%;
-}
-
-.login-form-container div:first-child {
-    background: url(../images/login-wallpaper.png) no-repeat;
-    position: absolute;
-    background-size: cover;
-    background-position: center;
-    width: 100%;
     height: 100%;
-    z-index: -1;
-    filter: blur(2px);
+    object-fit: cover;
 }
 
-.login-form-container form {
-    background: #fff;
-    border: var(--border);
-    width: 40rem;
-    padding: 2rem;
-    box-shadow: var(--box-shadow);
-    border-radius: 0.5rem;
-    margin: 2rem;
+.logo-text {
+    color: #ff6b2b;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-.login-form-container form h3 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    color: var(--black);
+h1 {
     text-align: center;
+    margin-bottom: 0.5rem;
 }
 
-.login-form-container form span {
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
     display: block;
-    font-size: 1.5rem;
-    padding-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
-.login-form-container form .box {
+input[type='email'],
+input[type='password'] {
     width: 100%;
-    margin: 0.7rem 0;
-    font-size: 1.6rem;
-    border: var(--border);
-    border-radius: 0.5rem;
-    padding: 1rem 1.2rem;
-    color: var(--black);
-    text-transform: none;
+    padding-left: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 3rem;
+    font-size: 0.9rem;
 }
 
-.login-form-container form .checkbox {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 0;
+input[type='email']:focus,
+input[type='password']:focus {
+    outline: none;
+    border-color: #ff6b2b;
 }
 
-.login-form-container form .checkbox label {
-    font-size: 1.5rem;
-    color: var(--light-color);
-    cursor: pointer;
+.forgot-password {
+    text-align: right;
+    margin-top: -0.5rem;
 }
 
-.login-form-container form .btn {
-    text-align: center;
-    width: 100%;
-    margin: 1.5rem 0;
-    padding: 1.3rem 0;
-    border-radius: 5px;
-    background-color: var(--light-color);
-    cursor: pointer;
+.forgot-password a {
+    color: #ff6b2b;
+    text-decoration: none;
+    font-size: 0.9rem;
 }
 
-.login-form-container form .btn:hover {
-    background-color: var(--dark-color);
+.sign-in-button {
+    background-color: #ff793f;
     color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem;
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: 0.3s ease-in-out;
 }
 
-.login-form-container form p {
-    padding-top: 0.8rem;
-    color: var(--light-color);
-    font-size: 1.5rem;
+.sign-in-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
-.login-form-container form p a {
-    color: var(--bg);
-    text-decoration: underline;
+.sign-in-button:hover {
+    background-color: #ff4d00;
+}
+
+.sign-up {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.sign-up a {
+    color: #ff6b2b;
+    text-decoration: none;
+}
+
+.terms {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.terms a {
+    color: #ff6b2b;
+    text-decoration: none;
+}
+
+.status {
+    line-height: 0;
+    font-size: 0.9rem;
+    text-align: center;
+    /* display: none; */
+    padding: 0;
 }

@@ -7,34 +7,22 @@
     <meta name="description" content="BookBuddy">
     <meta name="keywords" content="Book, BookBuddy">
     <meta name="author" content="BookBuddy Team">
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <title>BookBuddy - Home</title>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsonwebtoken@9.0.2/index.min.js"></script>
+    <script src="/js/middleware.js"></script>
 </head>
 
 <body>
     <section class="home new-books-swiper" id="home">
         <div class="swiper-wrapper">
             <div class="row swiper-slide">
-                <!-- <div class="thumbnail">
-                    <img src="<%= `${origin}/api/image/${book.thumbnailId}` %>" alt="<%= book.title %>">
-                </div>
-                <div class="content">
-                    <h3>
-                        <%= book.title %>
-                    </h3>
-                    <p>
-                        <%= book.description.substring(0, 150) %>...
-                    </p>
-                    <a href="<%= `${origin}/book/detail/${book.id}` %>" class="btn">shop now</a>
-                </div>
-                <div class="book-image">
-                    <a href="<%= `${origin}/book/detail/${book.id}` %>"><img src="<%= `${origin}/api/image/${book.thumbnailId}` %>" alt="<%= book.title %>"></a>
-                </div> -->
+            
             </div>
         </div>
 
