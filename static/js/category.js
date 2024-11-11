@@ -38,7 +38,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             booksToDisplay.forEach((book) => {
                 const bookCard = document.createElement('a');
-                bookCard.href = `/book/detail/${encodeURIComponent(book.id)}`;
+                bookCard.href = `/book/detail?id=${encodeURIComponent(book.id)}`;
+                bookCard.addEventListener('click', () => {
+                    setKey('currentBook', book.id);
+                });
                 bookCard.className = 'book-card';
                 bookCard.innerHTML = `
                         <img src="${apiUrl}/api/image/${book.thumbnailId}" alt="${book.title}" class="book-cover">

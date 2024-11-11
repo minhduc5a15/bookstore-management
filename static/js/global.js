@@ -51,5 +51,16 @@ const getBooks = async () => {
         return response.data;
     } catch (error) {
         console.log(error);
+        return [];
+    }
+};
+
+const getBook = async (id) => {
+    try {
+        const response = await axiosInstance.get(`/api/books/${id}`);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        return null;
     }
 };
