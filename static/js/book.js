@@ -26,6 +26,14 @@ const fetchBookData = async () => {
 
         const addToCartBtn = document.getElementById('add-to-cart');
         const addToCart = async () => {
+            // axiosInstance.get('/api/auth/me').then(({ data }) => {
+            //     const { currentUser: user } = data;
+            // })
+            const user = await verifyUser();
+            if (!user) {
+                window.location.href = `/sign-in?redirect=${encodeURIComponent(window.location.href)}`;
+                return;
+            }
             const response = await axiosInstance.post('/api/carts', { id: bookId });
             if (response.status === 200) {
                 addToCartBtn.innerHTML = 'Added to cart';
@@ -84,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     insertHeader();
     insertFooter();
     insertHead();
+
     fetchBookData();
     relatedBooks();
 });

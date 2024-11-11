@@ -1,10 +1,13 @@
 .cart-header {
-    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-color: var(--bg);
     color: white;
-    text-align: center;
     padding: 2em;
     position: relative;
     overflow: hidden;
+    font-size: 1.2rem;
 }
 
 .cart-header h1 {
@@ -27,9 +30,10 @@ main {
     margin: 0 auto;
     padding: 2em;
     font-size: 1.4rem;
-    background-color: rgb(246, 179, 150);
+    background-color: rgb(255, 221, 215);
     border-radius: 20px;
     display: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .book-item {
@@ -119,7 +123,7 @@ main {
     width: 100%;
     padding: 1em;
     margin-top: 1em;
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 5px;
