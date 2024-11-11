@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookBuddy - Category</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/category.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/global.js"></script>
+    <script src="/js/middleware.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="filters">
+            <div class="filter-group">
+                <div class="filter-item">
+                    <label for="category">Category:</label>
+                    <select id="category">
+                        <option value="">All Categories</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label for="price">Max Price:</label>
+                    <input type="range" id="price" min="0" max="50" step="1" value="50">
+                    <output for="price" id="priceOutput">$50</output>
+                </div>
+            </div>
+            <div class="filter-group">
+                <div class="filter-item">
+                    <label for="search">Search:</label>
+                    <input type="text" id="search" placeholder="Search by title or author">
+                </div>
+            </div>
+        </div>
+        <div id="bookCount"></div>
+        <div class="book-grid" id="bookGrid">
+            <!-- Books will be dynamically inserted here -->
+        </div>
+        <div class="pagination">
+            <button id="prevPage" disabled>Previous</button>
+            <button id="nextPage">Next</button>
+        </div>
+    </div>
+    <script src="/js/category.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch(`${Url}/api/auth/test`);
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
     const signInBtn = document.getElementById('sign-in-button');
@@ -23,21 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const signIn = async () => {
             try {
                 isPending = true;
-                const response = await fetch(`${Url}/api/auth/sign-in`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    credentials: 'include',
-                    body: JSON.stringify({ email, password }),
-                });
+                const response = await axiosInstance.post('/api/auth/sign-in', { email, password });
                 console.log(response);
-                if (response.ok) {
+                if (response.status === 200) {
                     signInStatus.textContent = 'Sign in successful! Redirecting...';
                     signInStatus.style.color = 'green';
-                    // setTimeout(() => {
-                    //     window.location.href = '/';
-                    // }, 1000);
+                    const { user } = response.data;
+                    setKey('user', JSON.stringify(user));
+                    setKey('token', response.data.token);
+                    setTimeout(() => {
+                        window.location.href = '/';
+                    }, 1000);
                 } else {
                     signInStatus.textContent = 'Sign in failed. Please try again.';
                     signInStatus.style.color = 'red';
@@ -51,9 +46,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
         signIn();
     });
-
-    setInterval(() => {
-        console.log(document.cookie)
-    }, 3000);
-
 });

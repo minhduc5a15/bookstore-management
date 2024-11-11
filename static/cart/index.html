@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Book Cart </title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/cart.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/global.js"></script>
+    <script src="/js/middleware.js"></script>
+</head>
+
+<body>
+    <header class="cart-header">
+        <h1>📚 Your Book Cart 🛒</h1>
+    </header>
+    <section>
+        <div class="empty-cart">
+            <div class="empty-cart-icon">🛒</div>
+            <p class="empty-cart-message">Your cart is empty. Add some exciting books!</p>
+            <a href="/category" class="shop-now-btn">Shop Now</a>
+        </div>
+        <main id="cart-container">
+            <div class="cart-total">
+                Total: $50.97
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </main>
+    </section>
+    <script src="/js/cart.js"></script>
+</body>
+
+</html>
