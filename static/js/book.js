@@ -83,6 +83,7 @@ const relatedBooks = async () => {
 document.addEventListener('DOMContentLoaded', () => {
     insertHeader();
     insertFooter();
+    insertHead();
     fetchBookData();
     relatedBooks();
 });

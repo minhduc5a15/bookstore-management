@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     getBooks().then((books) => {
-        const booksPerPage = 25;
+        const booksPerPage = 15;
         let allCategories = new Set();
 
         books.forEach((book) => {

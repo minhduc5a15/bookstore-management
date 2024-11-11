@@ -112,21 +112,6 @@ main {
     font-size: 1.5em;
     font-weight: 600;
     color: var(--primary-color);
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-
-    100% {
-        transform: scale(1);
-    }
 }
 
 .checkout-btn {

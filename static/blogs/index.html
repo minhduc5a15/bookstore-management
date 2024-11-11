@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookBuddy - Blogs</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/blogs.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/js/global.js"></script>
+    <!-- <script src="/js/middleware.js"></script> -->
+</head>
+
+<body>
+    <div class="container new-post">
+        <h2>Create a New Post</h2>
+        <form id="newPostForm">
+            <input type="text" id="postTitle" placeholder="Post Title" required>
+            <textarea id="postContent" placeholder="Post Content" required></textarea>
+            <button class="read-more" type="button" onclick="createPost()">Create Post</button>
+        </form>
+    </div>
+    <main class="blog-posts">
+        <div class="blog-header">
+            <h1>Newest Blogs <i class="fa-solid fa-newspaper"></i></h1>
+        </div>
+        <div class="container" id="NewestPost">
+            <!-- <article class="blog-post">
+                <h2>The Art of Slow Reading in a Fast-Paced World</h2>
+                <div class="blog-post-meta">
+                    <img src="/images/user.png" alt="Sarah Johnson">
+                    <span class="blog-post-author">Sarah Johnson</span>
+                </div>
+                <p class="blog-post-preview">In our rapidly moving digital age, the practice of slow reading has become a radical act. This post explores the benefits of immersing yourself in a book, savoring each word, and how it can...</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+
+            <article class="blog-post">
+                <h2>Exploring Vietnam's Rich Literary Heritage</h2>
+                <div class="blog-post-meta">
+                    <img src="/images/user.png" alt="Minh Nguyen">
+                    <span class="blog-post-author">Minh Nguyen</span>
+                </div>
+                <p class="blog-post-preview">Vietnam's literature is a treasure trove of poetic beauty and historical depth. From classic works like 'The Tale of Kieu' to contemporary novels that capture the essence of modern Vietnam...</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+
+            <article class="blog-post">
+                <h2>The Rise of Audiobooks: A New Chapter in Reading</h2>
+                <div class="blog-post-meta">
+                    <img src="/images/user.png" alt="Lily Pham">
+                    <span class="blog-post-author">Lily Pham</span>
+                </div>
+                <p class="blog-post-preview">Audiobooks have transformed the way we consume literature, offering a hands-free, immersive reading experience. This post delves into the growing popularity of audiobooks, their impact on...</p>
+                <a href="#" class="read-more">Read More</a>
+            </article>
+
+            <article class="blog-post">
+                <h2>Building a Home Library: Tips and Tricks</h2>
+                <div class="blog-post-meta">
+                    <img src="/images/user.png" alt="Alex Tran">
+                    <span class="blog-post-author">Alex Tran</span>
+                </div>
+                <p class="blog-post-preview">Creating a personal library is a dream for many book lovers. This guide walks you through the process of curating your collection, organizing your space, and creating a cozy reading nook that...</p>
+                <a href="#" class="read-more">Read More</a>
+            </article> -->
+        </div>
+    </main>
+    <div class="container" id="pagination">
+        <button class="read-more" onclick="prevPage()" id="prevBtn" disabled>Previous</button>
+        <span id="pageIndicator">Page 1</span>
+        <button class="read-more" onclick="nextPage()" id="nextBtn">Next</button>
+    </div>
+
+    <script src="/js/about.js"></script>
+    <script src="/js/blogs.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+.hero {
+    width: 100%;
+    min-height: calc(100vh - 175px);
+    background: url('/images/login-wallpaper.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+}
+
+@media screen and (max-width: 991px) {
+    .hero {
+        min-height: calc(100vh - 125px);
+    }
+}
+
+.hero .hero-content {
+    flex: 1;
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 12px;
+    gap: 12px;
+}
+
+.hero .hero-content div {
+    flex: 1 1 300px;
+    min-height: 300px;
+    max-width: 500px;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.hero .hero-content div h1 {
+    color: whitesmoke;
+    padding: 0 2rem;
+    width: 100%;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow:
+        2px 2px 0px black,
+        -2px 2px 0px black,
+        2px -2px 0px black,
+        -2px -2px 0px black;
+}
+.hero .hero-content div h3 {
+    color: whitesmoke;
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-align: center;
+    text-shadow:
+        1px 1px 0px black,
+        -1px 1px 0px black,
+        1px -1px 0px black,
+        -1px -1px 0px black;
+    padding: 2rem 0;
+}
+.hero .hero-content div a {
+    height: 40px;
+    width: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e7623d;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.ourStory {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ourStory > div {
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ourStory > div h1 {
+    color: var(--main-color);
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 2rem;
+}
+
+.ourStory > div p {
+    /* color: var(--main-color); */
+    font-size: 1.7rem;
+    padding: 0 2rem;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.grid-container {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    width: 100%;
+}
+
+@media screen and (max-width: 1160px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+.grid-container .card-container {
+    background-color: white;
+}
+
+.duck-container {
+    padding: 2rem;
+    display: grid;
+    /* grid-template-columns: repeat(autofit, 1fr); */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+@media screen and (max-width: 950px) {
+    .duck-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .duck-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card-container {
+    grid-column: span 1;
+
+    border-radius: 15px;
+
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    cursor: default;
+}
+.card-container:hover {
+    transform: translateY(-10px);
+}
+.card-container > img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.card-container > h2 {
+    font-size: 1.7rem;
+    padding: 1rem 0;
+}
+.card-container > h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
