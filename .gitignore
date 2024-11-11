@@ -1,11 +1,2 @@
-.idea
-server
-node_modules
+cert
 .vscode
-bun.lockb
-.env
-.vercel
-.env*.local
-dist
-package-lock.json
-test
