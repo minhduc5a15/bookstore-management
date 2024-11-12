@@ -1,6 +1,6 @@
 .hero{
     width: 100%;
-    min-height: calc(100vh - 175px);
+    min-height: calc(100vh - 150px);
     background: url('/images/login-wallpaper.png');
     background-repeat: no-repeat;
     background-position: center;
