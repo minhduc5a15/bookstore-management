@@ -1,15 +1,3 @@
-{
-    // <article class="blog-post">
-    //     <h2>Exploring Vietnam's Rich Literary Heritage</h2>
-    //     <div class="blog-post-meta">
-    //         <img src="/images/user.png" alt="Minh Nguyen">
-    //         <span class="blog-post-author">Minh Nguyen</span>
-    //     </div>
-    //     <p class="blog-post-preview">Vietnam's literature is a treasure trove of poetic beauty and historical depth. From classic works like 'The Tale of Kieu' to contemporary novels that capture the essence of modern Vietnam...</p>
-    //     <a href="#" class="read-more">Read More</a>
-    // </article>
-}
-
 const postsPerPage = 5;
 let currentPage = 1;
 let posts = [

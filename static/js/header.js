@@ -20,7 +20,7 @@ signOutButton.addEventListener('click', () => {
 
     axiosInstance.post('/api/auth/sign-out').then(() => {
         localStorage.clear();
-        window.location.reload();
+        window.location.reload(true);
     });
 });
 
