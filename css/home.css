@@ -28,62 +28,48 @@
     padding: 0;
 }
 
-.thumbnail {
-    position: absolute;
-    top: 0;
+/*------------------------------------------------------------------------------------------*/
+.new-books-swiper{
+    width: 100%;
+    height: calc(100vh - 145px);
+}
+.swiper-new {
     width: 100%;
     height: 100%;
-    z-index: -1;
-    filter: contrast(0.5) brightness(0.5);
-    opacity: 0.8;
-    background: #c5c5c5;
+    overflow: hidden;
 }
-
-.thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.home .swiper-wrapper .row {
+.swiper-slide {
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    font-size: 20px;
+    color: #fff;
 }
-
-.home .swiper-wrapper .row .content {
-    flex: 1 1 42rem;
-    padding: 5rem;
-}
-
-.home .swiper-wrapper .row .book-image {
-    flex: 1 1 42rem;
-    text-align: center;
-    margin-top: 2rem;
-}
-
-.home .swiper-wrapper .row .book-image a img {
-    height: 55rem;
-}
-
-.home .swiper-wrapper .row .book-image .stand {
+.swiper-slide .newBook{
     width: 100%;
-    margin-top: -2rem;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f3f3f3;
 }
 
-.home .swiper-wrapper .row .content h3 {
-    color: var(--light-color);
-    font-size: 4.5rem;
-    text-transform: uppercase;
+.swiper-slide .newBook .book-content{
+    flex: 1;
+    background-color: #4ecdc4;
+}
+.swiper-slide .newBook .book-img{
+    flex: 1;
+    background-color: #cd4eba;
 }
 
-.home .swiper-wrapper .row .content p {
-    color: var(--light-color);
-    font-size: 1.4rem;
-    line-height: 2;
-    padding: 1rem 0;
+.newbtn {
+    font-weight: bold;
+    background-color: transparent;
 }
+/*------------------------------------------------------------------------------------------*/
+
+
+
 
 .icons-container {
     display: grid;
@@ -119,18 +105,20 @@
     color: var(--light-color);
 }
 
-.featured .featured-slider .box {
-    max-width: 35rem;
-    margin: 2rem 0;
-    position: relative;
+
+/*------------------------------------------------------------------------------------------*/
+
+.featured .featured-slider{
+    width: 100%;
     overflow: hidden;
-    text-align: center;
-    border-radius: 10px;
-    padding: 10px;
-    display: flex;
-    background: #ffb092;
-    flex-direction: column;
 }
+.swiper-slide .bestSeller{
+    height: 300px;
+    width: 100%;
+    background-color: #cd4eba;
+}
+/*------------------------------------------------------------------------------------------*/
+
 
 .featured .featured-slider .box .image img {
     height: 25rem;
@@ -163,11 +151,9 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-    border: var(--border-hover);
     height: 4rem;
     width: 4rem;
     color: var(--black);
-    background: #fff;
 }
 
 .swiper-button-next::after,
@@ -175,11 +161,8 @@
     font-size: 2rem;
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    background: var(--black);
-    color: #fff;
-}
+
+
 
 .newsletter {
     display: flex;
@@ -201,11 +184,19 @@
 }
 
 .newsletter form {
+    display: flex;
+    flex-direction: column;
     max-width: 60rem;
     text-align: center;
+    gap: 1rem;
 }
 
 .newsletter form h3 {
+    text-shadow: 
+        1px 1px 0px rgb(0, 0, 0),
+       -1px 1px 0px black,
+        1px -1px 0px black,
+       -1px -1px 0px black;
     font-size: 2.5rem;
     color: #dce1cb;
     padding-bottom: 0.5rem;
@@ -222,12 +213,36 @@
 }
 
 .newsletter form input[type='email'] {
-    height: 6rem;
+    height: 5rem;
 }
 
 .newsletter form input[type='submit'] {
+    color: whitesmoke;
+    font-weight: bold;
     width: 100%;
+    height: 3.4rem;
+    font-size: 1.7rem;
+    border-radius: 0.5rem;
+    background-color: var(--dark-color);
+    cursor: pointer;
 }
+
+/*------------------------------------------------------------------------------------------*/
+
+.arrivals-slider{
+    width: 100%;
+    overflow: hidden;
+}
+.swiper-slide .arrivalsBook{
+    height: 300px;
+    width: 100%;
+    background-color: black;
+}
+
+/*------------------------------------------------------------------------------------------*/
+
+
+
 
 .comment-form {
     flex-direction: column;
@@ -241,7 +256,8 @@
     border-radius: 4px;
 }
 .comment-form textarea {
-    height: 100px;
+    height: 80px;
+    max-height: 100px;
     resize: vertical;
 }
 .comment-form button {
