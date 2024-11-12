@@ -1,34 +1,46 @@
-<header class="header">
-    <div class="header-1">
+<header>
+    <div class="logo">
         <a href="/" id="logo" class="logo" style="display: flex; align-items: center;">
             <img src="/favicon.ico" width="40" alt="BookBuddy Logo">
             BookBuddy
         </a>
-
-        <div action="" class="search-form">
-            <input type="search" name="" placeholder="search here..." id="search-box">
-            <label for="search-box" class="fas fa-search"></label>
-            <div id="search-result">
+    </div>
+    <div action="" class="search-form">
+        <input type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <div id="search-result">
+        </div>
+    </div>
+    <div class="user-menu">
+        <button class="user-button" id="userButton" aria-haspopup="true" aria-expanded="false">
+            <div class="user-avatar"></div>
+            <!-- username -->
+            <span></span>
+        </button>
+        <div class="dropdown" id="userDropdown">
+            <div class="dropdown-content">
+                <div class="user-info">
+                    <!-- username -->
+                    <h3></h3>
+                    <!-- email -->
+                    <p></p>
+                </div>
+                <div class="dropdown-buttons">
+                    <button onclick="window.location.href='/cart'" id="cartButton">🛒 Your Cart </button>
+                    <button id="signOutButton"> <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out</button>
+                </div>
             </div>
         </div>
-        <div class="icons">
-            <div id="search-btn" class="fas fa-search"></div>
-            <a href="#" class="fas fa-heart"></a>
-            <a href="/cart" id="cart-btn" class="fas fa-shopping-cart">
-                <span class="cart-count"></span>
-            </a>
-            <a href="/sign-in" id="login-btn" class="fas fa-user"></a>
-        </div>
-    </div>
-    <div class="header-2">
-        <nav class="navbar">
-            <a href="/">Home</a>
-            <a href="/category">Category</a>
-            <a href="/about">About us</a>
-            <a href="/blogs">Blogs</a>
-        </nav>
     </div>
 </header>
+<div class="nav-container">
+    <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="/category">Category</a>
+        <a href="/about">About us</a>
+        <a href="/blogs">Blogs</a>
+    </nav>
+</div>
 <nav class="bottom-navbar">
     <a href="/">
         <i class="fa-solid fa-house"></i>

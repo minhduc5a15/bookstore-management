@@ -26,12 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(response);
                 if (response.status === 200) {
                     signInStatus.textContent = 'Sign in successful! Redirecting...';
+                    const redirectTo = new URLSearchParams(window.location.search).get('redirect');
                     signInStatus.style.color = 'green';
                     const { user } = response.data;
                     setKey('user', JSON.stringify(user));
                     setKey('token', response.data.token);
                     setTimeout(() => {
-                        window.location.href = '/';
+                        window.location.href = redirectTo || '/';
                     }, 1000);
                 } else {
                     signInStatus.textContent = 'Sign in failed. Please try again.';

@@ -1,35 +1,4 @@
-.btn {
-    margin-top: 1rem;
-    display: inline-block;
-    padding: 0.9rem 3rem;
-    border-radius: 0.5rem;
-    color: #fff;
-    background: var(--bg);
-    font-size: 1.7rem;
-    cursor: pointer;
-    font-weight: 500;
-}
-
-.btn:hover {
-    background: var(--dark-color);
-}
-
-.header .header-1 {
-    padding: 1.5em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--primary-color);
-    font-size: 2.5em;
-    z-index: 1;
-}
-
-.header .header-1 .logo {
-    font-size: 2.5rem;
-    font-weight: bolder;
-    color: var(--black);
-}
-.header-1::before {
+header::before {
     content: '📚';
     font-size: 5em;
     position: absolute;
@@ -39,7 +8,7 @@
     transform: rotate(15deg);
     /* z-index: -1; */
 }
-.header-1::after {
+header::after {
     content: '📚';
     font-size: 5em;
     position: absolute;
@@ -49,11 +18,8 @@
     transform: rotate(15deg);
     z-index: -1;
 }
-.header .header-1 .logo i {
-    color: var(--bg);
-}
 
-.header .header-1 .search-form {
+.search-form {
     width: 50rem;
     height: 5rem;
     border: var(--border);
@@ -64,7 +30,7 @@
     position: relative;
 }
 
-.header .header-1 .search-form input {
+.search-form input {
     font-size: 1.6rem;
     height: 100%;
     padding-left: 2rem;
@@ -75,18 +41,18 @@
     border-radius: 20px;
 }
 
-.header .header-1 .search-form label {
+.search-form label {
     font-size: 2.5rem;
     padding-right: 1.5rem;
     color: var(--black);
     cursor: pointer;
 }
 
-.header .header-1 .search-form label:hover {
+.search-form label:hover {
     color: var(--bg);
 }
 
-.header .header-1 .search-form #search-result {
+.search-form #search-result {
     position: absolute;
     width: 100%;
     min-height: 8rem;
@@ -104,7 +70,7 @@
     font-size: 1.3rem;
 }
 
-.header .header-1 .search-form #search-result .search-result-item {
+.search-form #search-result .search-result-item {
     width: 100%;
     min-height: 7rem;
     display: flex;
@@ -113,56 +79,41 @@
     cursor: pointer;
 }
 
-.header .header-1 .search-form #search-result .search-result-item:hover {
+.search-form #search-result .search-result-item:hover {
     background-color: #c4c4c4;
 }
 
-.header .header-1 .search-form #search-result .search-result-item .result-img {
+.search-form #search-result .search-result-item .result-img {
     width: 7rem;
     aspect-ratio: 7/10;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.header .header-1 .search-form #search-result .search-result-item .result-img img {
+.search-form #search-result .search-result-item .result-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.header .header-1 .search-form #search-result .search-result-item .result-info {
+.search-form #search-result .search-result-item .result-info {
     flex: 1;
-}
-
-.header .header-1 .icons div,
-.header .header-1 .icons a {
-    font-size: 2.5rem;
-    margin-left: 2rem;
-    color: var(--black);
-    cursor: pointer;
-    z-index: 1223;
-    background-color: transparent;
-}
-
-.header .header-1 .icons div:hover,
-.header .header-1 .icons a:hover {
-    color: #833301;
 }
 
 #search-btn {
     display: none;
 }
 
-.header .header-2 {
+.nav-container {
     background: var(--bg);
 }
 
-.header .header-2 .navbar {
+.nav-container .navbar {
     text-align: center;
     background-color: var(--primary-color);
 }
 
-.header .header-2 .navbar a {
+.nav-container .navbar a {
     color: #fff;
     display: inline-block;
     padding: 1.2rem;
@@ -170,11 +121,11 @@
     position: relative;
 }
 
-.header .header-2 .navbar a:hover {
+.nav-container .navbar a:hover {
     background: var(--dark-color);
 }
 
-.header .header-2.active {
+.nav-container.active {
     position: fixed;
     top: 0;
     left: 0;
@@ -184,7 +135,7 @@
 
 #cart-btn {
     position: relative;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 .cart-count {
@@ -340,7 +291,7 @@
     .bottom-navbar a {
         font-size: 1.5rem;
     }
-    .header .header-2 {
+    .nav-container {
         display: none;
     }
 
@@ -358,7 +309,7 @@
         box-shadow: var(--box-shadow);
         position: relative;
     }
-    .header .header-1 .search-form {
+    .search-form {
         position: absolute;
         top: -115%;
         right: 2rem;
@@ -367,11 +318,11 @@
         z-index: 1000;
         border-radius: 15px;
     }
-    
-    .header .header-1 .search-form input {
+
+    .search-form input {
         border-radius: 15px;
     }
-    .header .header-1 .search-form.active {
+    .search-form.active {
         top: 115%;
         z-index: 100;
     }
@@ -387,3 +338,109 @@
     left: 0;
     border-radius: 2px;
 } */
+
+header {
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    font-size: 2.5em;
+    z-index: 1;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.user-menu {
+    position: relative;
+}
+
+.user-button {
+    background-color: var(--dark-color);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.user-button:hover {
+    background-color: var(--main-color);
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--light-orange);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+    color: var(--primary-orange);
+    font-weight: bold;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    min-width: 200px;
+    margin-top: 0.5rem;
+}
+
+.dropdown.show {
+    display: block;
+    z-index: 9999;
+}
+
+.dropdown-content {
+    padding: 1rem;
+}
+
+.user-info {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.user-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--main-color);
+}
+
+.user-info p {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.dropdown-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-buttons button {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 6px;
+}
+
+.dropdown-buttons button:hover {
+    background-color: var(--dark-color);
+    color: white;
+}
