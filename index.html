@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/home.css">
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="/js/global.js"></script>
@@ -16,27 +16,14 @@
 <body>
 
     <section class="home new-books-swiper" id="home">
-<!-- -------------------------------------------------------------------------------------------------- -->        
+        <!-- -------------------------------------------------------------------------------------------------- -->
         <div class="swiper-new">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="newBook">
-                        <div class="book-content"></div>
-                        <div class="book-img"></div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="newBook">
-                        <div class="book-content"></div>
-                        <div class="book-img"></div>
-                    </div>
-                </div>
+            <div class="swiper-wrapper" id="newest-book-wrapper">
             </div>
-            <div class="swiper-pagination"></div>
         </div>
         <div class="newbtn swiper-button-next"></div>
         <div class="newbtn swiper-button-prev"></div>
-<!-- -------------------------------------------------------------------------------------------------- -->        
+        <!-- -------------------------------------------------------------------------------------------------- -->
     </section>
 
     <section class="icons-container">
@@ -77,42 +64,18 @@
     <section class="featured" id="featured">
         <h1 class="heading"><span>Best seller</span></h1>
 
-<!-- -------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------- -->
         <div style="position: relative;">
             <div class="featured-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="bestSeller">
-                            slide1
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="bestSeller">
-                            slide1
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="bestSeller">
-                            slide1
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="bestSeller">
-                            slide1
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="bestSeller">
-                            slide1
-                        </div>
-                    </div>
+                <div class="swiper-wrapper" id="seller-book-wrapper">
+                    
                 </div>
-                <div class="swiper-pagination"></div>
+                <!-- <div class="swiper-pagination"></div> -->
                 <!-- <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div> -->
             </div>
         </div>
-<!-- -------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------- -->
     </section>
 
     <section class="newsletter">
@@ -127,45 +90,12 @@
     <section class="arrivals" id="arrivals">
 
         <h1 class="heading"> <span>new arrivals</span></h1>
-<!-- -------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------- -->
         <div style="position: relative;">
             <div class="arrivals-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="arrivalsBook">
-                            book-x
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="arrivalsBook">
-                            book-x
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="arrivalsBook">
-                            book-x
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="arrivalsBook">
-                            book-x
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="arrivalsBook">
-                            book-x
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="arrivalsBook">
-                            book-x
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="arrivalsBook">
-                            book-x
-                        </div>
-                    </div>
+                <div class="swiper-wrapper" id="arrival-book-wrapper">
+
+                    
                 </div>
                 <div class="swiper-pagination"></div>
                 <!-- <div class="swiper-button-next"></div>
@@ -173,64 +103,9 @@
             </div>
         </div>
 
-        <!-- <div class="swiper arrivals-slider">
+        
 
-            <div class="swiper-wrapper">
-                <a href="#" class="swiper-slide box">
-                    <div class="image">
-                        <img src="/images/sherlock.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>new arrival</h3>
-                        <div class="price">$20.99 <span>$30.99</span></div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="#" class="swiper-slide box">
-                    <div class="image">
-                        <img src="/images/sherlock.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>new arrival</h3>
-                        <div class="price">$20.99 <span>$30.99</span></div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="#" class="swiper-slide box">
-                    <div class="image">
-                        <img src="/images/sherlock.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>new arrival</h3>
-                        <div class="price">$15.99 <span>$20.99</span></div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div> -->
-
-
-<!-- -------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------- -->
     </section>
 
     <section class="comments-section">
