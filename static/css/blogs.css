@@ -13,17 +13,17 @@
     font-size: 14px;
 }
 
-.new-post{
+.new-post {
     height: 280px;
 }
-.new-post > h2{
+.new-post > h2 {
     display: flex;
     align-items: center;
     height: 50px;
     color: var(--main-color);
     font-size: 2rem;
 }
-#newPostForm{
+#newPostForm {
     width: 100%;
     height: 230px;
     display: flex;
@@ -31,23 +31,24 @@
     gap: 12px;
     position: relative;
 }
-#postTitle{
+#postTitle {
     max-width: 600px;
     font-size: 1.6rem;
-    padding: 1rem;
+    padding: 1.4rem;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
-#postContent{
-    max-height: 120px;
-    max-width: 100%;
+#postContent {
+    height: 125px;
+    width: 100%;
     font-size: 1.6rem;
-    padding: 1rem;
+    padding: 1.4rem;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: none;
+    resize: none;
 }
-#newPostForm>button{
+#newPostForm > button {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -156,15 +157,14 @@
     box-shadow: 0 0 15px rgba(74, 144, 226, 0.5);
 }
 
-
-#pagination{
+#pagination {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 300px;
 }
 
-#pagination>button{
+#pagination > button {
     width: 80px;
     cursor: pointer;
 }

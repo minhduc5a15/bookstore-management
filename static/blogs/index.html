@@ -12,8 +12,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/global.js"></script>
     <!-- <script src="/js/middleware.js"></script> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -22,23 +20,25 @@
         <form id="newPostForm">
             <input type="text" id="postTitle" placeholder="Post Title" required>
             <textarea id="postContent" placeholder="Post Content" required></textarea>
-            <button class="read-more" type="button" onclick="createPost()">Create Post</button>
+            <button class="read-more" id="createPost" type="button">Create Post</button>
         </form>
     </div>
     <main class="blog-posts">
+
         <div class="blog-header">
             <h1>Newest Blogs <i class="fa-solid fa-newspaper"></i></h1>
         </div>
         <div class="container" id="NewestPost">
+
         </div>
+
     </main>
     <div class="container" id="pagination">
-        <button class="read-more" onclick="prevPage()" id="prevBtn" disabled>Previous</button>
+        <button class="read-more" id="prevBtn" disabled>Previous</button>
         <span id="pageIndicator">Page 1</span>
-        <button class="read-more" onclick="nextPage()" id="nextBtn">Next</button>
+        <button class="read-more" id="nextBtn">Next</button>
     </div>
 
-    <script src="/js/about.js"></script>
     <script src="/js/blogs.js"></script>
 </body>
 

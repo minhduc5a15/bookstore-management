@@ -25,13 +25,14 @@
 
 .home {
     position: relative;
+    z-index: 0;
     padding: 0;
 }
 
 /*------------------------------------------------------------------------------------------*/
 .new-books-swiper {
     width: 100%;
-    min-height: 60rem;
+    min-height: fit-content;
 }
 .swiper-new {
     width: 100%;
@@ -71,8 +72,13 @@
 .new-book-slide .newBook .book-content {
     flex: 1 1 42rem;
     padding: 5rem;
+    backdrop-filter: blur(3px);
     min-height: 35rem;
-    /* background-color: #4ecdc4; */
+}
+.new-book-slide .newBook .book-content p {
+    text-overflow: ellipsis;
+    max-height: 15rem;
+    overflow-y:auto;
 }
 .new-book-slide .newBook .book-img {
     flex: 1;
@@ -81,11 +87,11 @@
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(3px);
-    /* background-color: #cd4eba; */
+    padding-bottom: 1rem;
 }
 
 .new-book-slide .newBook .book-img a img {
-    height: 55rem;
+    height: 40rem;
     margin-top: 2rem;
 }
 
@@ -131,57 +137,54 @@
 
 /*------------------------------------------------------------------------------------------*/
 
-.featured .featured-slider {
+.featured-slider, .arrivals-slider {
     width: 100%;
     overflow: hidden;
 }
-.swiper-slide .bestSeller {
+
+.book-slider {
     height: 300px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    font-size: 20px;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.book-slider .box-slider .box-slider-img {
+    background-color: wheat;
+    height: 100%;
     width: 100%;
-    background-color: #cd4eba;
+    filter: brightness(0.7);
+}
+
+.book-slider .box-slider .box-slider-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box-slider-content {
+    position: absolute;
+    bottom: 0;
+    height: 30%;
+    background: #00000069;
+    padding: 1rem;
+    font-size: 1.3rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+.box-slider-content h3 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 /*------------------------------------------------------------------------------------------*/
-
-.featured .featured-slider .box .image img {
-    height: 25rem;
-}
-
-.featured .featured-slider .box .content {
-    display: flex;
-    flex-direction: column;
-    padding: 1.5rem;
-    align-items: start;
-}
-
-.featured .featured-slider .box .content p {
-    font-size: 2rem;
-    color: var(--dark-color);
-    text-align: left;
-}
-
-.featured .featured-slider .box .content .price {
-    font-size: 2.2rem;
-    color: var(--black);
-    padding-top: 1rem;
-}
-
-.featured .featured-slider .box .content .price span {
-    font-size: 1.5rem;
-    color: var(--light-color);
-    text-decoration: line-through;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-    height: 4rem;
-    width: 4rem;
-    color: var(--black);
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-    font-size: 2rem;
-}
 
 .newsletter {
     display: flex;
@@ -248,15 +251,6 @@
 
 /*------------------------------------------------------------------------------------------*/
 
-.arrivals-slider {
-    width: 100%;
-    overflow: hidden;
-}
-.swiper-slide .arrivalsBook {
-    height: 300px;
-    width: 100%;
-    background-color: black;
-}
 
 /*------------------------------------------------------------------------------------------*/
 

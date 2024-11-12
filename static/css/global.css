@@ -31,26 +31,21 @@
 
 html {
     font-size: 62.5%;
-    overflow-x: hidden;
     scroll-padding-top: 5rem;
     scroll-behavior: smooth;
 }
-
-html::-webkit-scrollbar {
-    /* width: 1rem; */
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    width: 5px;
 }
-
-html::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-html::-webkit-scrollbar-thumb {
-    background: var(--black);
+::-webkit-scrollbar {
+    background-color: transparent;
+    display: none;
 }
 
 body {
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
     background-color: #fff5e6;
 }
 a,
@@ -62,7 +57,7 @@ a:active {
 
 section {
     width: 100%;
-    padding: 5rem 9%;
+    padding: 5rem 8%;
 }
 
 /* media queries */

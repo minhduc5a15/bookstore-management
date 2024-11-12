@@ -1,3 +1,5 @@
+'use strict';
+
 const isProduction = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1' && window.location.hostname !== 'test-localhost';
 console.log(`Mode: ${isProduction ? 'production' : 'development'}`);
 const setKey = (key, value) => {
@@ -87,4 +89,13 @@ const verifyUser = async () => {
         return null;
     }
 };
-// document.addEventListener("DOMContentLoaded", () =>)
+
+const getBlogs = async () => {
+    try {
+        const response = await axiosInstance.get('/api/blogs');
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        return [];
+    }
+};

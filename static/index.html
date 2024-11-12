@@ -9,6 +9,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js" integrity="sha512-DdX/YwF5e41Ok+AI81HI8f5/5UsoxCVT9GKYZRIzpLxb8Twz4ZwPPX+jQMwMhNQ9b5+zDEefc+dcvQoPWGNZ3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/global.js"></script>
     <title>BookBuddy</title>
 </head>
@@ -68,35 +69,8 @@
         <div style="position: relative;">
             <div class="featured-slider">
                 <div class="swiper-wrapper" id="seller-book-wrapper">
-                    <div class="swiper-slide">
-                        <div class="bestSeller">
-                            slide1
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="bestSeller">
-                            slide1
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="bestSeller">
-                            slide1
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="bestSeller">
-                            slide1
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="bestSeller">
-                            slide1
-                        </div>
-                    </div>
+
                 </div>
-                <div class="swiper-pagination"></div>
-                <!-- <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div> -->
             </div>
         </div>
         <!-- -------------------------------------------------------------------------------------------------- -->
@@ -106,7 +80,7 @@
         <div></div>
         <form action="">
             <h3>subscribe for latest updates</h3>
-            <input type="email" name="" placeholder="enter your email" value=minhduc5a15@gmail.com id="" class="box">
+            <input type="email" name="" placeholder="enter your email" id="email" class="box">
             <input type="submit" value="subscribe" class="btn">
         </form>
     </section>
@@ -117,105 +91,11 @@
         <!-- -------------------------------------------------------------------------------------------------- -->
         <div style="position: relative;">
             <div class="arrivals-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="arrivalsBook">
-                            book-x
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="arrivalsBook">
-                            book-x
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="arrivalsBook">
-                            book-x
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="arrivalsBook">
-                            book-x
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="arrivalsBook">
-                            book-x
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="arrivalsBook">
-                            book-x
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="arrivalsBook">
-                            book-x
-                        </div>
-                    </div>
+                <div class="swiper-wrapper" id="arrival-book-wrapper">
+
                 </div>
-                <div class="swiper-pagination"></div>
-                <!-- <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div> -->
             </div>
         </div>
-
-        <!-- <div class="swiper arrivals-slider">
-
-            <div class="swiper-wrapper">
-                <a href="#" class="swiper-slide box">
-                    <div class="image">
-                        <img src="/images/sherlock.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>new arrival</h3>
-                        <div class="price">$20.99 <span>$30.99</span></div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="#" class="swiper-slide box">
-                    <div class="image">
-                        <img src="/images/sherlock.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>new arrival</h3>
-                        <div class="price">$20.99 <span>$30.99</span></div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="#" class="swiper-slide box">
-                    <div class="image">
-                        <img src="/images/sherlock.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>new arrival</h3>
-                        <div class="price">$15.99 <span>$20.99</span></div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div> -->
-
 
         <!-- -------------------------------------------------------------------------------------------------- -->
     </section>
@@ -224,7 +104,7 @@
         <h1>Comments</h1>
         <form class="comment-form">
             <h3>Write your comment</h3>
-            <input type="text" placeholder="Your Name" value="minhduc5a15@gmail.com" disabled required>
+            <input type="text" placeholder="Your Name" id="email-author" value="" disabled required>
             <textarea placeholder="Write your comment here..." required></textarea>
             <button type="submit">Submit Comment</button>
         </form>

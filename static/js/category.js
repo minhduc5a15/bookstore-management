@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', async () => {
+$(document).ready(async function () {
     getBooks().then((books) => {
         const booksPerPage = 15;
         let allCategories = new Set();
@@ -9,49 +9,49 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         });
 
-        const categorySelect = document.getElementById('category');
+        const $categorySelect = $('#category');
 
         allCategories.forEach((category) => {
-            const option = document.createElement('option');
-            option.value = category;
-            option.innerHTML = category[0].toUpperCase() + category.slice(1);
-            categorySelect.appendChild(option);
+            const $option = $('<option></option>');
+            $option.val(category);
+            $option.text(category.charAt(0).toUpperCase() + category.slice(1));
+            $categorySelect.append($option);
         });
 
         let currentPage = 1;
         let filteredBooks = [...books];
 
-        const bookGrid = document.getElementById('bookGrid');
-        const prevPageBtn = document.getElementById('prevPage');
-        const nextPageBtn = document.getElementById('nextPage');
-        const priceInput = document.getElementById('price');
-        const priceOutput = document.getElementById('priceOutput');
-        const searchInput = document.getElementById('search');
-        const bookCountElement = document.getElementById('bookCount');
+        const $bookGrid = $('#bookGrid');
+        const $prevPageBtn = $('#prevPage');
+        const $nextPageBtn = $('#nextPage');
+        const $priceInput = $('#price');
+        const $priceOutput = $('#priceOutput');
+        const $searchInput = $('#search');
+        const $bookCountElement = $('#bookCount');
 
         function displayBooks() {
             const startIndex = (currentPage - 1) * booksPerPage;
             const endIndex = startIndex + booksPerPage;
             const booksToDisplay = filteredBooks.slice(startIndex, endIndex);
 
-            bookGrid.innerHTML = '';
+            $bookGrid.empty();
 
             booksToDisplay.forEach((book) => {
-                const bookCard = document.createElement('a');
-                bookCard.href = `/book/detail?id=${encodeURIComponent(book.id)}`;
-                bookCard.addEventListener('click', () => {
+                const $bookCard = $('<a></a>');
+                $bookCard.attr('href', `/book/detail?id=${encodeURIComponent(book.id)}`);
+                $bookCard.addClass('book-card');
+                $bookCard.html(`
+                    <img src="${apiUrl}/api/image/${book.thumbnailId}" alt="${book.title}" class="book-cover">
+                    <div class="book-info">
+                        <h3 class="book-title">${book.title}</h3>
+                        <p class="book-author">${book.authors.join(', ')}</p>
+                        <p class="book-price">$${book.price}</p>
+                    </div>
+                `);
+                $bookCard.on('click', () => {
                     setKey('currentBook', book.id);
                 });
-                bookCard.className = 'book-card';
-                bookCard.innerHTML = `
-                        <img src="${apiUrl}/api/image/${book.thumbnailId}" alt="${book.title}" class="book-cover">
-                        <div class="book-info">
-                            <h3 class="book-title">${book.title}</h3>
-                            <p class="book-author">${book.authors.join(', ')}</p>
-                            <p class="book-price">$${book.price}</p>
-                        </div>
-                    `;
-                bookGrid.appendChild(bookCard);
+                $bookGrid.append($bookCard);
             });
 
             updatePaginationButtons();
@@ -59,18 +59,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         function updatePaginationButtons() {
-            prevPageBtn.disabled = currentPage === 1;
-            nextPageBtn.disabled = currentPage === Math.ceil(filteredBooks.length / booksPerPage);
+            $prevPageBtn.prop('disabled', currentPage === 1);
+            $nextPageBtn.prop('disabled', currentPage === Math.ceil(filteredBooks.length / booksPerPage));
         }
 
         function updateBookCount() {
-            bookCountElement.textContent = `Showing ${filteredBooks.length} book${filteredBooks.length !== 1 ? 's' : ''}`;
+            $bookCountElement.text(`Showing ${filteredBooks.length} book${filteredBooks.length !== 1 ? 's' : ''}`);
         }
 
         function applyFilters() {
-            const category = categorySelect.value.toLowerCase();
-            const maxPrice = parseFloat(priceInput.value);
-            const searchTerm = searchInput.value.toLowerCase();
+            const category = $categorySelect.val().toLowerCase();
+            const maxPrice = parseFloat($priceInput.val());
+            const searchTerm = $searchInput.val().toLowerCase();
 
             filteredBooks = books.filter((book) => {
                 const matchesCategory = !category || book.categories.some((cat) => cat.toLowerCase() === category);
@@ -83,25 +83,26 @@ document.addEventListener('DOMContentLoaded', async () => {
             displayBooks();
         }
 
-        prevPageBtn.addEventListener('click', () => {
+        $prevPageBtn.on('click', () => {
             if (currentPage > 1) {
                 currentPage--;
                 displayBooks();
             }
         });
 
-        nextPageBtn.addEventListener('click', () => {
+        $nextPageBtn.on('click', () => {
             if (currentPage < Math.ceil(filteredBooks.length / booksPerPage)) {
                 currentPage++;
                 displayBooks();
             }
         });
-        categorySelect.addEventListener('change', applyFilters);
-        priceInput.addEventListener('input', () => {
-            priceOutput.textContent = `$${priceInput.value}`;
+
+        $categorySelect.on('change', applyFilters);
+        $priceInput.on('input', () => {
+            $priceOutput.text(`$${$priceInput.val()}`);
             applyFilters();
         });
-        searchInput.addEventListener('input', applyFilters);
+        $searchInput.on('input', applyFilters);
 
         displayBooks();
     });

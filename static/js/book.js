@@ -15,6 +15,8 @@ const fetchBookData = async () => {
         document.getElementById('published-date').innerText = book.publishedDate;
         document.getElementById('page-count').innerText = book.pageCount;
         document.getElementById('description').innerText = book.description;
+        // const desscription = book.desscription;
+
 
         const categoriesContainer = document.getElementById('categories');
         book.categories.forEach((category) => {
@@ -26,9 +28,6 @@ const fetchBookData = async () => {
 
         const addToCartBtn = document.getElementById('add-to-cart');
         const addToCart = async () => {
-            // axiosInstance.get('/api/auth/me').then(({ data }) => {
-            //     const { currentUser: user } = data;
-            // })
             const user = await verifyUser();
             if (!user) {
                 window.location.href = `/sign-in?redirect=${encodeURIComponent(window.location.href)}`;

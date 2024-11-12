@@ -66,10 +66,27 @@ input:focus {
     border-color: var(--primary-color);
 }
 
+#bookCount {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    margin-top: 0.2rem;
+    line-height: 1.2rem;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
 .book-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 2rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .book-card {
@@ -148,14 +165,6 @@ input:focus {
     background-color: #ccc;
     cursor: not-allowed;
     transform: none;
-}
-
-#bookCount {
-    text-align: center;
-    margin-top: 0.2rem;
-    line-height: 1.2rem;
-    font-size: 1.2rem;
-    color: var(--primary-color);
 }
 
 @media (max-width: 768px) {

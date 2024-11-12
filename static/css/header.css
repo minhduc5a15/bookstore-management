@@ -1,3 +1,7 @@
+header {
+    position: relative;
+}
+
 header::before {
     content: '📚';
     font-size: 5em;
@@ -7,16 +11,6 @@ header::before {
     opacity: 0.1;
     transform: rotate(15deg);
     /* z-index: -1; */
-}
-header::after {
-    content: '📚';
-    font-size: 5em;
-    position: absolute;
-    top: -0.2em;
-    right: -0.2em;
-    opacity: 0.1;
-    transform: rotate(15deg);
-    z-index: -1;
 }
 
 .search-form {
@@ -56,17 +50,19 @@ header::after {
     position: absolute;
     width: 100%;
     min-height: 8rem;
+    max-height: 50rem;
     padding: 10px;
     top: 100%;
     margin-top: 1rem;
+    display: none;
     background-color: white;
     border-radius: 5px;
     z-index: 1000;
     transition: height 0.3s ease;
-    display: none;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
     flex-direction: column;
+    overflow-y: auto;
     font-size: 1.3rem;
 }
 
@@ -99,7 +95,10 @@ header::after {
 .search-form #search-result .search-result-item .result-info {
     flex: 1;
 }
-
+.search-form #search-result .search-result-item .result-info h3 .highlight {
+    background-color: #ffff00;
+    font-weight: bold;
+}
 #search-btn {
     display: none;
 }
